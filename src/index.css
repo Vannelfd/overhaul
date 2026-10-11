@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Charte SerieAddict (reprise du Figma web) */
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #000000;
+  --color-surface: #05141a;
+  --color-surface-2: #0a1f27;
+  --color-line: #152a32;
+  --color-muted: #8b9aa0;
+  --color-magenta: #b3306c;
+  --color-magenta-deep: #3a0c22;
+  --color-teal: #2a7f9e;
+  --color-link: #3b95b8;
+}
+
+/* Dégradé signature magenta → bleu-pétrole */
+@utility brand-gradient {
+  background-image: linear-gradient(90deg, #b3306c 0%, #6a3b86 50%, #2a7f9e 100%);
+}
+
+/* Fond des cartes mises en avant (sorties, actus) */
+@utility brand-card {
+  background-image: linear-gradient(135deg, #2a1428 0%, #14202e 50%, #0e3444 100%);
+}
+
+@utility brand-text {
+  background-image: linear-gradient(90deg, #8a4fa8 0%, #2a7f9e 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Texte en dégradé rose → bleu (titres hero) */
+@utility hero-text {
+  background-image: linear-gradient(90deg, #e04a8f 0%, #8a4fa8 50%, #3b95b8 100%);
+  background-clip: text;
+  color: transparent;
+}
