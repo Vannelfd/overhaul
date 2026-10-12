@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Canvas } from './canvas/Canvas'
+import { Canvas, isExport } from './canvas/Canvas'
 import { FocusView } from './canvas/FocusView'
 import type { FocusItem } from './canvas/FocusView'
 import { Frame } from './canvas/Frame'
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Canvas>
-        <main className="flex w-max flex-col gap-28 px-20 py-16">
+        <main className={`flex flex-col gap-28 px-20 py-16 ${isExport ? 'w-full' : 'w-max'}`}>
           {visible.map((section) => {
             const items: FocusItem[] = section.screens.map((screen, i) => ({
               ...screen,
@@ -32,6 +32,7 @@ function App() {
                 title={section.title}
                 description={section.description}
                 count={items.length}
+                wrap={isExport}
               >
                 {items.map((item, i) => (
                   <Frame
