@@ -29,7 +29,7 @@ function readCamera(): Camera {
 }
 
 export function Canvas({ children }: { children: ReactNode }) {
-  if (isExport) return <div className="min-h-screen w-full bg-neutral-200">{children}</div>
+  if (isExport) return <div className="min-h-screen w-max bg-neutral-200">{children}</div>
   return <InfiniteCanvas>{children}</InfiniteCanvas>
 }
 
