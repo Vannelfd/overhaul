@@ -190,9 +190,9 @@ const timeline = [
   { day: 'Lundi', date: '6 juillet 2026', items: [{ t: 'Stranger Things', p: 'Netflix', e: 'S04E09', h: '19h30', n: 4 }, { t: 'House of the Dragon', p: 'HBO Max', e: 'S02E04', h: '22h30', v: 45 }] },
 ]
 const memories = [
-  { k: 'Meilleur épisode vu', t: 'Ozymandias', s: 'Breaking Bad — S05E14', Icon: AwardIcon, c: 'text-yellow-400' },
-  { k: 'Épisode le plus noté', t: 'The Bicameral Mind', s: 'Westworld — S01E10', Icon: StarIcon, c: 'text-magenta' },
-  { k: 'Première série terminée', t: 'Friends', s: 'Saison 10 — 236 épisodes', Icon: SparklesIcon, c: 'text-link' },
+  { k: 'Meilleur épisode vu', t: 'Ozymandias', s: 'Breaking Bad · S05E14', Icon: AwardIcon, c: 'text-yellow-400' },
+  { k: 'Épisode le plus noté', t: 'The Bicameral Mind', s: 'Westworld · S01E10', Icon: StarIcon, c: 'text-magenta' },
+  { k: 'Première série terminée', t: 'Friends', s: 'Saison 10 · 236 épisodes', Icon: SparklesIcon, c: 'text-link' },
   { k: 'Série abandonnée', t: 'The Walking Dead', s: 'Arrêtée après la saison 8', Icon: HeartIcon, c: 'text-red-400' },
 ]
 

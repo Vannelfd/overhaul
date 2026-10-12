@@ -393,7 +393,7 @@ export function WishlistScreen() {
       </div>
       <section className="mt-6 flex flex-col gap-3">
         <SectionTitle title="Ma wishlist" action="Gérer" />
-        <p className="-mt-1 px-5 text-[11.5px] text-muted">25 séries enregistrées — prêtes à être ajoutées à ta médiathèque.</p>
+        <p className="-mt-1 px-5 text-[11.5px] text-muted">25 séries enregistrées, prêtes à être ajoutées à ta médiathèque.</p>
         <div className="px-5"><SearchField placeholder="Rechercher dans ma wishlist…" /></div>
         <Rail gap="gap-2">
           <Chip active>Tout</Chip>

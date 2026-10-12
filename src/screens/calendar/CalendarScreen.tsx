@@ -106,7 +106,7 @@ export function CalendarScreen() {
           <div>
             <h1 className="text-[24px] leading-tight font-black uppercase">Calendrier des sorties</h1>
             <p className="mt-1 text-[12.5px] leading-snug text-muted">
-              Semaine du 16 au 22 février 2026 — épisodes, saisons, nouvelles séries.
+              Semaine du 16 au 22 février 2026 : épisodes, saisons, nouvelles séries.
             </p>
           </div>
         </div>

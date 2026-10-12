@@ -324,7 +324,7 @@ export function PrivacyScreen() {
         },
         { h: '6. Partage des données', p: 'Vos données ne sont pas vendues. Elles peuvent être partagées avec des prestataires techniques strictement nécessaires à l’hébergement et à la maintenance du service.' },
       ]}
-      foot={<>7. Contact : <span className="text-link">dpo@seriesaddict.fr</span> — vous pouvez aussi saisir la CNIL.</>}
+      foot={<>7. Contact : <span className="text-link">dpo@seriesaddict.fr</span>. Vous pouvez aussi saisir la CNIL.</>}
     />
   )
 }

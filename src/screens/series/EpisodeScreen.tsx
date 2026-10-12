@@ -52,7 +52,7 @@ export function EpisodeScreen() {
         <div className="flex flex-col gap-2 text-[12.5px]">
           <div className="flex justify-between"><span className="text-white/70">Statut</span><span className="font-semibold text-link">Non vu</span></div>
           <div className="flex justify-between"><span className="text-white/70">Note communauté</span><span className="font-semibold text-link">4.8/5</span></div>
-          <div className="flex justify-between"><span className="text-white/70">Votre note</span><span className="text-muted">—</span></div>
+          <div className="flex justify-between"><span className="text-white/70">Votre note</span><span className="text-muted">Non noté</span></div>
         </div>
         <div className="grid grid-cols-2 gap-2">
           <span className="flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 text-[13px] font-semibold">

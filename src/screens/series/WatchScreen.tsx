@@ -231,7 +231,7 @@ export function WatchScreen() {
       <section className="brand-card mx-5 mt-7 flex flex-col gap-2 rounded-[22px] border border-magenta/30 p-4">
         <h3 className="text-[13px] font-extrabold uppercase">Commencer maintenant</h3>
         <p className="text-[12px] text-white/70">Vous avez 45 minutes devant vous ? Cet épisode est le parfait point de départ.</p>
-        <PrimaryButton className="mt-1"><PlayIcon size={13} /> Lancer S1E1 — 42 min</PrimaryButton>
+        <PrimaryButton className="mt-1"><PlayIcon size={13} /> Lancer S1E1 · 42 min</PrimaryButton>
       </section>
     </Screen>
   )

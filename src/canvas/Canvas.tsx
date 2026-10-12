@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 
 // Planche infinie façon Figma : une « caméra » (x, y, zoom) se déplace librement au-dessus des écrans.
 // - molette : défiler (Maj + molette : horizontal) · glisser : déplacer · Ctrl/⌘ + molette ou pincement : zoomer
+// - clavier : Ctrl +/− zoom · Ctrl 0 ou Maj 0 : 100 % · Maj 1 : tout voir (aucune barre d outils affichée)
 // - `?export` : rendu normal sans caméra (DOM 1:1, sans barre d'outils) pour l'import html.to.design.
 
 const MIN = 0.05
@@ -150,42 +151,7 @@ function InfiniteCanvas({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <div
-        data-toolbar
-        className="fixed bottom-5 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 rounded-full border border-neutral-300 bg-white/95 p-1.5 text-[13px] text-neutral-800 shadow-lg backdrop-blur"
-      >
-        <ToolButton label="Dézoomer (Ctrl −)" onClick={() => zoomAt(cam.z / 1.25)}>−</ToolButton>
-        <button
-          type="button"
-          title="Zoom à 100 % (Maj 0)"
-          onClick={() => zoomAt(1)}
-          className="w-16 rounded-full py-1.5 text-center font-semibold tabular-nums hover:bg-neutral-100"
-        >
-          {Math.round(cam.z * 100)} %
-        </button>
-        <ToolButton label="Zoomer (Ctrl +)" onClick={() => zoomAt(cam.z * 1.25)}>+</ToolButton>
-        <span className="mx-1 h-5 w-px bg-neutral-300" />
-        <button type="button" onClick={fit} title="Tout voir (Maj 1)" className="rounded-full px-3 py-1.5 font-medium hover:bg-neutral-100">
-          Tout voir
-        </button>
-        <span className="hidden pr-3 pl-1 text-[11.5px] text-neutral-500 lg:inline">
-          Molette : défiler · Maj + molette : horizontal · Ctrl + molette : zoom · glisser : déplacer
-        </span>
-      </div>
     </>
   )
 }
 
-function ToolButton({ label, onClick, children }: { label: string; onClick: () => void; children: ReactNode }) {
-  return (
-    <button
-      type="button"
-      title={label}
-      aria-label={label}
-      onClick={onClick}
-      className="flex size-8 items-center justify-center rounded-full text-[18px] leading-none hover:bg-neutral-100"
-    >
-      {children}
-    </button>
-  )
-}

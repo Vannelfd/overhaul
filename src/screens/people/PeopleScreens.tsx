@@ -401,7 +401,7 @@ export function MemberProfileScreen() {
               <p className="truncate text-[11.5px] font-bold">{s.t}</p>
               <p className="flex justify-between text-[9.5px] text-muted">
                 {s.n ? <span className="flex items-center gap-0.5"><StarIcon size={9} className="text-magenta" />{s.n}</span> : <span>Non noté</span>}
-                <span className="truncate">{s.when ?? '—'}</span>
+                <span className="truncate">{s.when ?? 'Non commencée'}</span>
               </p>
             </div>
           </div>

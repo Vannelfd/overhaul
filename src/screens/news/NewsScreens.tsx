@@ -192,7 +192,7 @@ export function ArticleScreen() {
       <PageHeader overline="News séries" title="Annulation" right={<IconButton><ShareIcon size={17} /></IconButton>} />
       <p className="mt-3 px-5 text-[10px] tracking-wider text-muted uppercase">SeriesAddict › News séries › Palm Royale</p>
       <div className="relative mx-5 mt-3 h-[210px] overflow-hidden rounded-[22px]"><Photo seed="palm-royale" /></div>
-      <p className="mt-1.5 px-5 text-[10px] text-muted">© Apple TV — Source : communiqué officiel</p>
+      <p className="mt-1.5 px-5 text-[10px] text-muted">© Apple TV · Source : communiqué officiel</p>
 
       <div className="mt-4 flex flex-col gap-3 px-5">
         <div className="flex flex-wrap gap-1.5">
@@ -598,7 +598,7 @@ export function PlayerScreen() {
       </div>
       <div className="flex flex-col gap-2 px-5 pt-4">
         <span className="flex flex-wrap gap-1.5"><Badge tone="magenta">New drop</Badge><Badge>Saison 2</Badge><Badge>CBS</Badge></span>
-        <h1 className="text-[22px] font-black uppercase">Tracker — trailer saison 2</h1>
+        <h1 className="text-[22px] font-black uppercase">Tracker : trailer saison 2</h1>
         <p className="flex gap-3 text-[11.5px] text-muted"><span>CBS</span>·<span>2:14</span>·<span className="flex items-center gap-1"><EyeIcon size={12} /> 1.2M</span></p>
         <div className="mt-1 flex gap-2">
           <Pill className="flex-1"><PlayIcon size={12} /> Watch now</Pill>

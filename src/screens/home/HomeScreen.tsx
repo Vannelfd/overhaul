@@ -69,7 +69,7 @@ function PosterRail({ prefix, numbered = false }: { prefix: string; numbered?: b
 export function HomeScreen() {
   return (
     <Screen tab="home">
-      {/* 1. Hero — Stranger Things saison 5 */}
+      {/* 1. Hero : Stranger Things saison 5 */}
       <section className="relative">
         <div className="absolute inset-0">
           <Photo seed="stranger-hero" className="opacity-60" />

@@ -25,7 +25,7 @@ export function CalendarListScreen() {
       <TopBar />
       <div className="flex flex-col gap-3 px-5 pt-2">
         <h1 className="text-[24px] leading-tight font-black uppercase">Calendrier des sorties</h1>
-        <p className="text-[12.5px] text-muted">Semaine du 16 au 22 février 2026 — épisodes, saisons, nouvelles séries.</p>
+        <p className="text-[12.5px] text-muted">Semaine du 16 au 22 février 2026 : épisodes, saisons, nouvelles séries.</p>
         <SearchField placeholder="Rechercher une série, une plateforme…" />
         <div className="flex items-center justify-between">
           <span className="flex h-9 items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 text-[12.5px] font-semibold whitespace-nowrap">
@@ -103,7 +103,7 @@ export function MyCalendarScreen() {
       <TopBar />
       <div className="flex flex-col gap-2 px-5 pt-2">
         <h1 className="text-[24px] font-black uppercase">Mon calendrier</h1>
-        <p className="text-[12.5px] text-muted">Semaine du 13 au 19 juil. 2026 — vos sorties, vos habitudes, votre rythme.</p>
+        <p className="text-[12.5px] text-muted">Semaine du 13 au 19 juil. 2026 : vos sorties, vos habitudes, votre rythme.</p>
       </div>
       <div className="mt-3 flex gap-2 px-5">
         <Chip active icon={<EyeIcon size={14} />}>Tout</Chip>
@@ -150,7 +150,7 @@ export function MyCalendarScreen() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-2">
               {d.habit && <span className="w-fit rounded-full bg-magenta/20 px-2 py-0.5 text-[9.5px] font-semibold text-magenta">Habitude</span>}
-              {d.items.length === 0 && <p className="py-2 text-[12px] text-muted">Aucune sortie — soirée libre</p>}
+              {d.items.length === 0 && <p className="py-2 text-[12px] text-muted">Aucune sortie, soirée libre</p>}
               {d.items.map((i) => (
                 <div key={i.t} className="flex items-center gap-2">
                   <div className="min-w-0 flex-1">
