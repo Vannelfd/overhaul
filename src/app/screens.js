@@ -161,17 +161,42 @@ const nextUp = (marker) => `<div style="position:relative;border-radius:26px;ove
   </div>
 </div>`;
 const queue = [['The Last of Us', 'S2 · E3', 'HBO Max', 43], ['Silo', 'S1 · E7', 'Apple TV', 70], ['The Bear', 'S3 · E2', 'Disney+', 20]];
+/* Accueil : le rendez-vous quotidien, dans l'ordre demandé par la cliente.
+   1 En ce moment pour toi · 2 Continuer à regarder · 3 Que regarder ce soir ? · 4 Du nouveau sur tes séries
+   (à la place de « À la une » : pas d'articles dans l'app) · 5 Défi du jour · 6 Tendances. Modules personnalisables. */
+const homeNum = (n) => `<span style="display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.1);font:800 10.5px/1 var(--display);margin-right:8px">${n}</span>`;
+const hsec = (n, t, a) => sec(`${homeNum(n)}${t}`, a);
 const H1 = `<div class="scr">
   ${topHome}
   <div class="pad"><span class="h-l">Bonsoir Charlotte</span><p class="small muted mt6">3 épisodes t'attendent ce soir.</p></div>
-  <div class="pad mt14">${nextUp(true)}</div>
-  ${sec('Ensuite', 'Mes séries')}
-  <div class="pad col g8">${queue.map(([t, e, p, pr]) => `<div class="card row g12" style="padding:10px 12px">${P(t, { w: 46, h: 64, notitle: true })}<div class="col g4" style="flex:1;min-width:0"><span class="b small">${t}</span><span class="xs muted">${e} · ${p}</span>${prog(pr)}</div><span class="round" style="width:42px;height:42px">${ic('check', 's')}</span></div>`).join('')}</div>
-  ${sec('À noter', '2')}
-  <div class="pad col g8">${[['Dark', 'S1 · E8', 'Vu hier'], ['The Bear', 'S3 · E1', 'Vu dimanche']].map(([t, e, w]) => `<div class="card row g12" style="padding:10px 12px">${P(t, { w: 42, h: 58, notitle: true })}<div class="col g4" style="flex:1"><span class="b small">${t} · ${e}</span><span class="xs muted">${w}</span></div><span class="stars" style="font-size:20px;letter-spacing:4px"><span class="off">★★★★★</span></span></div>`).join('')}</div>
-  <div class="pad mt20">
-    <div style="border-radius:22px;padding:16px 18px;background:var(--grad)" class="row g12"><div class="col g4" style="flex:1"><span class="h-s" style="font-size:16px">Envie d'autre chose ?</span><span class="xs" style="opacity:.9">Fais défiler les séries choisies pour toi</span></div><span class="round" style="width:46px;height:46px;background:#fff;color:#000;border:0">${ic('right', 's')}</span></div>
+
+  ${hsec(1, 'En ce moment pour toi', 'Calendrier')}
+  <div class="pad">${nextUp(true)}</div>
+  <div class="pad col g8 mt10">
+    ${[['Dark Matter', 'Nouvelle saison · saison 2', 'Dimanche', 'mag'], ['The Last of Us', 'S2 · E4 · HBO Max', 'Vendredi', 'teal']].map(([t, e, d, c]) => `<div class="card row g12" style="padding:10px 12px">${P(t, { w: 40, h: 56, notitle: true })}<div class="col g4" style="flex:1;min-width:0"><span class="b small">${t}</span><span class="xs muted">${e}</span></div><span class="pill ${c}">${d}</span></div>`).join('')}
+    <div class="card row g12" style="padding:10px 12px">${P('Dark', { w: 40, h: 56, notitle: true })}<div class="col g4" style="flex:1"><span class="b small">À noter · Dark S1 · E8</span><span class="xs muted">Vu hier</span></div><span class="stars" style="font-size:18px;letter-spacing:3px"><span class="off">★★★★★</span></span></div>
   </div>
+
+  ${hsec(2, 'Continuer à regarder', 'Mes séries')}
+  <div class="rail" style="gap:12px">${queue.map(([t, e, p, pr]) => `<div class="col g6" style="width:132px;flex-shrink:0">${P(t, { w: 132, h: 188, notitle: true, ring: pr })}<span class="b small">${t}</span><div class="row between"><span class="xs c-teal b">${e}</span><span class="round" style="width:34px;height:34px">${ic('check', 'xs')}</span></div></div>`).join('')}</div>
+
+  ${hsec(3, 'Que regarder ce soir ?')}
+  <div class="pad"><div style="border-radius:22px;padding:16px;background:var(--grad)" class="col g10">
+    <span class="small b" style="opacity:.95">Tu as envie de quoi ?</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${['🧩 Un mystère', '😂 Rire', '💔 Être ému', '⚡ Du suspense'].map((m) => `<span class="chip" style="justify-content:center;background:rgba(0,0,0,.28);border-color:rgba(255,255,255,.25);color:#fff">${m}</span>`).join('')}</div>
+  </div></div>
+
+  ${hsec(4, 'Du nouveau sur tes séries', 'Sur le site')}
+  <div class="pad col g8">${[['Severance', 'La saison 3 est confirmée', 'Annonce'], ['The Bear', 'Renouvelée pour une saison 5', 'Annonce']].map(([t, h, k]) => `<div class="card row g12" style="padding:10px 12px">${P(t, { w: 56, h: 56, notitle: true })}<div class="col g4" style="flex:1;min-width:0"><span class="pill gold">${k}</span><span class="b small">${t} : ${h}</span></div>${ic('right', 's')}</div>`).join('')}</div>
+
+  ${hsec(5, 'Le défi du jour', 'Jouer')}
+  <div class="pad"><div class="card row g12" style="padding:12px 14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(135deg,#1d1606,var(--s1))"><span class="c-gold">${ic('bolt')}</span><div class="col" style="flex:1"><span class="b small">Quiz Breaking Bad</span><span class="xs muted">5 questions · + 50 points</span></div><span class="btn w sm">Jouer</span></div></div>
+
+  ${hsec(6, 'Les tendances', 'Top 10')}
+  <div class="rail" style="gap:8px;margin-bottom:12px">${['Les plus suivies', 'Les plus aimées', 'Les plus discutées'].map((c, i) => chip(c, i === 0, 'sm')).join('')}</div>
+  <div class="rail" style="gap:20px;padding-left:28px">${['Wednesday', 'Severance', 'The Bear', 'Silo'].map((t, i) => `<div style="position:relative;padding-left:20px">${P(t, { w: 100, h: 144 })}<span class="rank">${i + 1}</span></div>`).join('')}</div>
+
+  <div class="pad mt26"><span class="btn o full">${ic('list', 's')} Personnaliser mon accueil</span></div>
 </div>${tabbar('Accueil')}`;
 
 /* Récompense immédiate, dans la foulée du geste */
@@ -612,7 +637,7 @@ const B4 = `<div class="scr">
   ${back('Personnaliser mon accueil', 'Accueil')}
   <div class="pad"><p class="small muted">Fais glisser les blocs pour remonter ce qui t'intéresse. Désactive ce que tu ne veux pas voir.</p></div>
   <div class="pad col g8 mt14">
-    ${[['play', 'En ce moment pour toi', 'Nouveaux épisodes, nouvelles saisons, sorties', true], ['clock', 'Continuer à regarder', 'Séries en cours et épisode suivant', true], ['shuffle', 'Que regarder ce soir ?', 'Une recommandation selon ton humeur', true], ['star', 'Épisodes à noter', 'Les derniers épisodes vus', true], ['bolt', 'Défi du jour', 'Un quiz ou une question rapide', true], ['flame', 'Tendances', 'Les séries les plus suivies et discutées', false]].map(([i, t, s, on]) => `<div class="card row g12" style="padding:12px 14px"><span class="dim">${ic('list', 's')}</span><span class="ib" style="width:38px;height:38px">${ic(i, 's')}</span><div class="col g4" style="flex:1;min-width:0"><span class="b small">${t}</span><span class="xs muted">${s}</span></div><span class="tog ${on ? 'on' : ''}"></span></div>`).join('')}
+    ${[['play', 'En ce moment pour toi', 'Nouveaux épisodes, nouvelles saisons, sorties', true], ['clock', 'Continuer à regarder', 'Séries en cours et épisode suivant', true], ['shuffle', 'Que regarder ce soir ?', 'Une recommandation selon ton humeur', true], ['spark', 'Du nouveau sur tes séries', 'Les annonces de tes séries suivies', true], ['bolt', 'Le défi du jour', 'Un quiz ou une question rapide', true], ['flame', 'Les tendances', 'Les plus suivies, aimées et discutées', true]].map(([i, t, s, on]) => `<div class="card row g12" style="padding:12px 14px"><span class="dim">${ic('list', 's')}</span><span class="ib" style="width:38px;height:38px">${ic(i, 's')}</span><div class="col g4" style="flex:1;min-width:0"><span class="b small">${t}</span><span class="xs muted">${s}</span></div><span class="tog ${on ? 'on' : ''}"></span></div>`).join('')}
   </div>
   <div class="pad mt20 col g10"><span class="btn w full">Enregistrer</span><span class="small muted" style="text-align:center">Revenir à l'ordre par défaut</span></div>
 </div>${tabbar('Accueil')}`;
@@ -1451,8 +1476,8 @@ const PAYWALL = `<div class="scr" style="padding-top:0;pointer-events:none"><div
 const MODULES = [
   ['A', 'Premiers pas', 'Sans compte : choisir ses séries, ses plateformes, et recevoir ses premières recommandations.', [
     ['A1', 'Bienvenue', O1, 'P1'], ['A2', 'Choisis 5 séries', O2, 'P1'], ['A3', 'Tes abonnements', O3, 'P1'], ['A4', 'Tes premières recommandations', V2.A4, 'P1'], ['A5', 'Créer un compte', V2.A5, 'P1'], ['A6', 'Connexion', V2.A6, 'P1']]],
-  ['B', 'Accueil', 'Les épisodes à voir, les épisodes à noter, une idée pour ce soir.', [
-    ['B1', 'Accueil', H1, 'P1'], ['B2', 'Épisode vu, la récompense', REWARD, 'P1'], ['B3', 'Notification', N1, 'P1'], ['B4', 'Annonce d\'une série', N2, 'P1'], ['B5', 'Notifications', V2.B3, 'P1']]],
+  ['B', 'Accueil', 'Le rendez-vous quotidien, dans son ordre : en ce moment pour toi, continuer à regarder, que regarder ce soir, du nouveau sur tes séries, le défi du jour, les tendances.', [
+    ['B1', 'Accueil', H1, 'P1'], ['B2', 'Épisode vu, la récompense', REWARD, 'P1'], ['B3', 'Notification', N1, 'P1'], ['B4', 'Annonce d\'une série', N2, 'P1'], ['B5', 'Notifications', V2.B3, 'P1'], ['B6', 'Personnaliser mon accueil', V2.B4, 'P1']]],
   ['C', 'Mes séries', 'Bibliothèque, épisodes, calendrier, et la fiche de chaque série.', [
     ['C1', 'Ma bibliothèque', M1, 'P1'], ['C2', 'Épisodes à voir', V2.CE, 'P1'], ['C3', 'Mon calendrier', V2.C2, 'P1'], ['C4', 'Fiche série', F1(false), 'P1'],
     ['C5', 'Fiche d\'une série en pause', FW, 'P1'], ['C6', 'Saison', V2.D2, 'P1'], ['C7', 'Épisode', V2.D3, 'P1'], ['C8', 'Rattrape-moi en stories', R2S, 'P1'], ['C9', 'Prêt à reprendre', R2, 'P1']]],
@@ -1482,8 +1507,7 @@ const JOURNEYS = [
 
 /* Ce qui viendra après le lancement : listé, pas maquetté ici */
 const LATER = [
-  ['Accueil', ['Personnaliser mon accueil']],
-  ['Mes séries', ['Avis et communauté d\'une série']],
+    ['Mes séries', ['Avis et communauté d\'une série']],
   ['Découvrir', ['Collections à cocher (« 100 séries à voir »)', 'Recommandations avancées']],
   ['Jouer', ['Devine la série', 'Duel du jour', 'Quel personnage es-tu ?', 'Défis, badges et classement', 'Test ADN séries']],
   ['Profil', ['Statistiques détaillées', 'Wrapped, le bilan de l\'année', 'Profil d\'un ami']],
