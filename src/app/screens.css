@@ -170,6 +170,54 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .code { text-decoration: none; color: var(--fg); font-size: 12.5px; border: 1px solid var(--board-line); border-radius: 999px; padding: 6px 11px; white-space: nowrap; }
 .code b { color: var(--teal); font-family: var(--display); }
 .code:hover { border-color: var(--teal); }
+/* Charte revue (Divin) : Wine + secondaire sombre, moins de blanc, pas de contours, plus d'air, police plus douce */
+:root {
+  --line: rgba(255,255,255,.06);
+  --gold: #2fa3c7;
+  --green: #2fa3c7;
+  --wine: linear-gradient(100deg, #a3365f 0%, #5c1d3a 100%);
+  --display: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+}
+.btn.p, .btn.w { background: var(--wine); color: #fff; }
+.phone { background: var(--ink); }
+.card, .ib, .round, .field, .seg, .chip, .btn.o, .sheet { border: 0; }
+.chip { background: var(--s2); }
+.chip.on, .seg span.on { background: var(--magenta); color: #fff; }
+.btn.o { background: var(--s2); }
+.btn.gh { border: 1px solid rgba(255,255,255,.16); }
+.btn { font-weight: 700; }
+.ib, .round { background: var(--s2); }
+.ib.ghost { background: rgba(0,0,0,.4); border: 0; }
+.field { background: var(--s2); }
+.field.focus { box-shadow: inset 0 0 0 1.5px var(--teal); }
+.tabbar { background: var(--ink); border-top: 1px solid rgba(255,255,255,.05); }
+.list > * + * { border-top-color: rgba(255,255,255,.05); }
+.spoil { background: var(--s2); }
+.poster.sel { outline: none; }
+.poster .chk { border: 0; background: var(--magenta); }
+.pad { padding-inline: 22px; }
+.sec { padding-inline: 22px; margin-top: 34px; margin-bottom: 14px; }
+.rail { padding-inline: 22px; gap: 14px; }
+.h-xl { font-weight: 800; text-transform: none; letter-spacing: -.02em; }
+.h-l { font-weight: 800; text-transform: none; letter-spacing: -.015em; }
+.h-m, .h-s { font-weight: 700; }
+.up { text-transform: none; }
+.sec h3 { font-weight: 700; font-size: 15px; text-transform: none; letter-spacing: 0; }
+.sec a { color: var(--muted); font-weight: 500; }
+.over { font-weight: 600; letter-spacing: .1em; }
+.pill { font-weight: 700; letter-spacing: .02em; text-transform: none; font-size: 10.5px; }
+.pill.gold, .pill.green { background: color-mix(in srgb, var(--teal) 22%, transparent); color: #8fdaf0; }
+.poster .pt { font-weight: 800; text-transform: none; }
+.small { line-height: 1.5; }
+/* Sélection : une simple coche ; le Wine reste réservé aux boutons */
+.selchk { position: absolute; top: 10px; right: 10px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--teal); color: #fff; }
+.poster .chk { background: var(--teal); }
+.chip.on, .seg span.on { background: rgba(255,255,255,.14); color: var(--fg); }
+.pill.mag { background: rgba(255,255,255,.14); color: var(--fg); }
+.tabbar span.on svg { color: var(--fg); }
+.tabbar span.on::before { background: var(--fg); }
+.dot { background: var(--teal); }
 
 @media (prefers-reduced-motion: no-preference) {
   .burst { animation: glow 2.4s ease-in-out infinite; }
