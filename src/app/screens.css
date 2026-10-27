@@ -218,6 +218,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .tabbar span.on svg { color: var(--fg); }
 .tabbar span.on::before { background: var(--fg); }
 .dot { background: var(--teal); }
+.steps i.on { background: var(--teal); }
 
 @media (prefers-reduced-motion: no-preference) {
   .burst { animation: glow 2.4s ease-in-out infinite; }
