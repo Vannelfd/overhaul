@@ -187,7 +187,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   --body: "Manrope", "Segoe UI", system-ui, sans-serif;
 }
 /* Titres moins collés au haut de la page */
-.scr { padding-top: 18px; }
+.scr { padding-top: 44px; }
+/* Barre du haut posée sur une image : même marge que les autres écrans */
+.topbar[style*="position:absolute"] { top: 26px !important; }
 .c-teal, .sec a { color: #5aa9c3; }
 .btn.p, .btn.w { background: var(--wine); color: #fff; }
 .phone { background: var(--ink); }
