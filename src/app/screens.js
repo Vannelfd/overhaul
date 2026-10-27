@@ -45,9 +45,9 @@ const ic = (n, c = '') => `<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="
 
 /* ---------- Affiches ---------- */
 const PAL = [
-  ['#3a4b63', '#0e141c'], ['#6b2f45', '#160910'], ['#2f5d55', '#08140f'], ['#6a5326', '#151006'], ['#41356f', '#0d0a1c'],
-  ['#264f6e', '#07121b'], ['#6e3424', '#170a05'], ['#2d3f2b', '#0a1009'], ['#5b2a62', '#12081a'], ['#5f6672', '#121417'],
-  ['#1f5f73', '#061418'], ['#73284b', '#1a0711'],
+  ['#3a4b63', '#011921'], ['#841d4f', '#160910'], ['#1e6c86', '#08140f'], ['#6a5326', '#151006'], ['#3c0a22', '#0d0a1c'],
+  ['#1e6c86', '#011921'], ['#6e3424', '#170a05'], ['#2d3f2b', '#0a1009'], ['#5b2a62', '#12081a'], ['#5f6672', '#121417'],
+  ['#1f5f73', '#011921'], ['#73284b', '#3c0a22'],
 ];
 const pal = (s) => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0; return PAL[h % PAL.length]; };
 // Photo d'illustration publiée avec la page (img/<titre>.jpg), en attendant les vraies affiches.
@@ -86,7 +86,7 @@ const topHome = `<div class="topbar"><span class="logo">SERIE<span>ADDICT</span>
 const platformBtn = (name, color, txt = '#fff') => `<span class="btn" style="background:${color};color:${txt};flex:1">${ic('play', 's')} Regarder sur ${name}</span>`;
 
 /* ---------- Premiers pas ---------- */
-const O1 = `<div class="scr" style="padding:0;background:radial-gradient(120% 60% at 50% 0%, #4a1631 0%, transparent 60%), radial-gradient(90% 50% at 100% 60%, #0d3a4c 0%, transparent 70%), #000">
+const O1 = `<div class="scr" style="padding:0;background:radial-gradient(120% 60% at 50% 0%, #3c0a22 0%, transparent 60%), radial-gradient(90% 50% at 100% 60%, #0d3a4c 0%, transparent 70%), #000">
   <div style="position:relative;height:380px;margin-top:24px">
     <div style="position:absolute;left:24px;top:56px;transform:rotate(-9deg)">${P('Severance', { w: 112, h: 162 })}</div>
     <div style="position:absolute;left:138px;top:14px;transform:rotate(2deg);z-index:2;box-shadow:0 20px 50px rgba(0,0,0,.6);border-radius:14px">${P('Dark', { w: 124, h: 180 })}</div>
@@ -190,7 +190,7 @@ const H1 = `<div class="scr">
   <div class="pad col g8">${[['Severance', 'La saison 3 est confirmée', 'Annonce'], ['The Bear', 'Renouvelée pour une saison 5', 'Annonce']].map(([t, h, k]) => `<div class="card row g12" style="padding:10px 12px">${P(t, { w: 56, h: 56, notitle: true })}<div class="col g4" style="flex:1;min-width:0"><span class="pill gold">${k}</span><span class="b small">${t} : ${h}</span></div>${ic('right', 's')}</div>`).join('')}</div>
 
   ${hsec(5, 'Le défi du jour', 'Jouer')}
-  <div class="pad"><div class="card row g12" style="padding:12px 14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(135deg,#0a161d,var(--s1))"><span class="c-gold">${ic('bolt')}</span><div class="col" style="flex:1"><span class="b small">Quiz Breaking Bad</span><span class="xs muted">5 questions · + 50 points</span></div><span class="btn w sm">Jouer</span></div></div>
+  <div class="pad"><div class="card row g12" style="padding:12px 14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(135deg,#011921,var(--s1))"><span class="c-gold">${ic('bolt')}</span><div class="col" style="flex:1"><span class="b small">Quiz Breaking Bad</span><span class="xs muted">5 questions · + 50 points</span></div><span class="btn w sm">Jouer</span></div></div>
 
   ${hsec(6, 'Les tendances', 'Top 10')}
   <div class="rail" style="gap:8px;margin-bottom:12px">${['Les plus suivies', 'Les plus aimées', 'Les plus discutées'].map((c, i) => chip(c, i === 0, 'sm')).join('')}</div>
@@ -258,7 +258,7 @@ const D1 = `<div class="scr">
   <div class="rail">${[['Les 100 séries à voir', '23/100'], ['Les meilleures fins', 'Liste de Nadia'], ['Mini-séries cultes', '4/20']].map(([t, s]) => `<div class="col g6" style="width:150px;flex-shrink:0">${P(t, { w: 150, h: 96, notitle: true })}<span class="b small">${t}</span><span class="xs muted">${s}</span></div>`).join('')}</div>
 </div>${tabbar('Découvrir')}`;
 
-const D2 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 10%, #2a1a3c, transparent 70%), #000">
+const D2 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 10%, #3c0a22, transparent 70%), #000">
   ${back('Notre choix pour toi', 'Ce soir')}
   <div class="deck">
     <div class="back2">${P('Devs', { w: 250, h: 360, notitle: true })}</div>
@@ -308,20 +308,20 @@ const N3 = `<div class="scr">
 </div>${tabbar('Mes séries')}`;
 
 /* ---------- À deux ---------- */
-const J1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%, #4a1631, transparent 70%), radial-gradient(90% 35% at 100% 15%, #0f3546, transparent 70%), #000">
+const J1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%, #3c0a22, transparent 70%), radial-gradient(90% 35% at 100% 15%, #072631, transparent 70%), #000">
   <div class="topbar"><span class="h-l" style="font-size:22px">Jouer</span>${xp}</div>
-  <div class="pad"><div class="card col g10" style="padding:16px;background:linear-gradient(135deg,#0a161d,#0a161d);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))"><div class="row between"><span class="h-s">Niveau 12 · Exploratrice</span><span class="b c-gold">2 640 pts</span></div>${prog(64, 'gold')}</div></div>
+  <div class="pad"><div class="card col g10" style="padding:16px;background:linear-gradient(135deg,#011921,#011921);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))"><div class="row between"><span class="h-s">Niveau 12 · Exploratrice</span><span class="b c-gold">2 640 pts</span></div>${prog(64, 'gold')}</div></div>
   <div class="pad mt14" style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px">${[1, 1, 1, 1, 2, 0, 3].map((st, i) => `<div class="col" style="align-items:center;gap:3px;padding:8px 0;border-radius:12px;${st === 1 ? 'background:color-mix(in srgb,var(--gold) 16%,var(--s1))' : st === 2 ? 'background:var(--gold);color:#000' : 'background:var(--s1)'}"><span class="xs b">J${i + 1}</span><span>${st === 1 ? '✓' : st === 3 ? '🎁' : '⭐'}</span></div>`).join('')}</div>
   <div class="pad mt20" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    ${hot(1, `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,#264f6e,#07121b);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic('heart', 's')}</span><div class="col g4"><span class="h-s">Series Match</span><span class="xs" style="opacity:.8">Quoi regarder à deux</span></div></div>`, 'border-radius:20px')}
-    ${[['Quiz du jour', '5 questions · + 50', 'bolt', '#6b2f45'], ['Duel du jour', 'Breaking Bad ou Soprano ?', 'game', '#41356f'], ['Devine la série', 'Image floutée', 'search', '#2f5d55']].map(([t, s, i, c]) => `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,${c},#08090c);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic(i, 's')}</span><div class="col g4"><span class="h-s">${t}</span><span class="xs" style="opacity:.8">${s}</span></div></div>`).join('')}
+    ${hot(1, `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,#1e6c86,#011921);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic('heart', 's')}</span><div class="col g4"><span class="h-s">Series Match</span><span class="xs" style="opacity:.8">Quoi regarder à deux</span></div></div>`, 'border-radius:20px')}
+    ${[['Quiz du jour', '5 questions · + 50', 'bolt', '#841d4f'], ['Duel du jour', 'Breaking Bad ou Soprano ?', 'game', '#3c0a22'], ['Devine la série', 'Image floutée', 'search', '#1e6c86']].map(([t, s, i, c]) => `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,${c},#011921);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic(i, 's')}</span><div class="col g4"><span class="h-s">${t}</span><span class="xs" style="opacity:.8">${s}</span></div></div>`).join('')}
   </div>
 </div>${tabbar('Jouer')}`;
 
-const J2 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #0f3546, transparent 70%), #000">
+const J2 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #072631, transparent 70%), #000">
   ${back('Series Match', 'Avec Nadia')}
   <div class="pad col" style="align-items:center;gap:10px;text-align:center">
-    <div class="row" style="justify-content:center"><span class="av" style="width:68px;height:68px;font-size:22px;border:3px solid #000">C</span><span style="margin-inline:-12px;z-index:2">${ring(87, '87 %', 'var(--magenta)', 80)}</span><span class="av" style="width:68px;height:68px;font-size:22px;border:3px solid #000;background:linear-gradient(135deg,#2fa3c7,#7c43a3)">N</span></div>
+    <div class="row" style="justify-content:center"><span class="av" style="width:68px;height:68px;font-size:22px;border:3px solid #000">C</span><span style="margin-inline:-12px;z-index:2">${ring(87, '87 %', 'var(--magenta)', 80)}</span><span class="av" style="width:68px;height:68px;font-size:22px;border:3px solid #000;background:linear-gradient(135deg,#1e6c86,#3c0a22)">N</span></div>
     <span class="h-m">Le match parfait pour ce soir</span>
     <span class="xs muted">Netflix en commun · aucune des deux ne l'a vue</span>
   </div>
@@ -332,23 +332,23 @@ const J2 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0
 
 /* ---------- Partager ses goûts ---------- */
 const PR1 = `<div class="scr" style="padding-top:0">
-  <div style="height:120px;background:radial-gradient(80% 120% at 0% 0%, #d13c84, transparent 60%), radial-gradient(80% 120% at 100% 0%, #2fa3c7, transparent 60%), #1a0f24"><div class="topbar" style="justify-content:flex-end"><span class="ib ghost">${ic('gear')}</span></div></div>
+  <div style="height:120px;background:radial-gradient(80% 120% at 0% 0%, #841d4f, transparent 60%), radial-gradient(80% 120% at 100% 0%, #1e6c86, transparent 60%), #3c0a22"><div class="topbar" style="justify-content:flex-end"><span class="ib ghost">${ic('gear')}</span></div></div>
   <div class="pad" style="margin-top:-44px;position:relative;z-index:2">
     <div class="row g12" style="align-items:flex-end"><span class="av" style="width:88px;height:88px;font-size:30px;border:4px solid #000">C</span><span class="pill gold" style="margin-bottom:8px">Niveau 12</span></div>
     <span class="h-l mt10" style="display:block">Charlotte</span><span class="small muted">Exploratrice de séries · Thrillers · Science-fiction</span>
   </div>
   <div class="pad mt14" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">${[['142', 'Séries'], ['3 280', 'Épisodes'], ['96 j', 'De visionnage*']].map(([v, l]) => `<div class="card" style="padding:12px;text-align:center"><span class="h-m gtext" style="font-size:22px">${v}</span><span class="xs muted" style="display:block">${l}</span></div>`).join('')}</div>
-  <div class="pad mt14">${hot(1, `<div style="border-radius:22px;padding:16px;background:linear-gradient(135deg,#3d1530,#0f3546)" class="row g12">${ic('dna', 'l')}<div class="col g4" style="flex:1"><span class="over" style="color:#cfd8dc">Mon ADN séries</span><span class="h-s">La détective des intrigues</span></div><span class="btn w sm">Partager</span></div>`, 'border-radius:22px')}</div>
+  <div class="pad mt14">${hot(1, `<div style="border-radius:22px;padding:16px;background:linear-gradient(135deg,#3c0a22,#072631)" class="row g12">${ic('dna', 'l')}<div class="col g4" style="flex:1"><span class="over" style="color:#cfd8dc">Mon ADN séries</span><span class="h-s">La détective des intrigues</span></div><span class="btn w sm">Partager</span></div>`, 'border-radius:22px')}</div>
   ${sec('Mon top 4 de tous les temps')}
   <div class="pad" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">${['Six Feet Under', 'The Wire', 'Lost', 'BoJack Horseman'].map((t, i) => P(t, { w: '100%', h: 118, fs: 10, tl: `<span class="pill dark">${i + 1}</span>` })).join('')}</div>
   ${sec('Badges', '9')}
-  <div class="rail" style="gap:10px">${['🏃', '🔥', '🧠', '🎯', '📺', '🌙'].map((e) => `<span style="width:52px;height:52px;flex-shrink:0;border-radius:16px;display:grid;place-items:center;font-size:23px;background:linear-gradient(135deg,#2fa3c733,#d13c8433);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line))">${e}</span>`).join('')}</div>
+  <div class="rail" style="gap:10px">${['🏃', '🔥', '🧠', '🎯', '📺', '🌙'].map((e) => `<span style="width:52px;height:52px;flex-shrink:0;border-radius:16px;display:grid;place-items:center;font-size:23px;background:linear-gradient(135deg,#1e6c8633,#841d4f33);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line))">${e}</span>`).join('')}</div>
 </div>${tabbar('Profil')}`;
 
 const PR2 = `<div class="scr" style="background:#000">
   ${back('Mon ADN séries', 'Profil')}
   <div class="pad">
-    <div style="border-radius:28px;padding:22px 20px;background:radial-gradient(100% 60% at 100% 0%, #2fa3c7, transparent 60%), radial-gradient(100% 70% at 0% 100%, #d13c84, transparent 60%), #1a0f24" class="col g12">
+    <div style="border-radius:28px;padding:22px 20px;background:radial-gradient(100% 60% at 100% 0%, #1e6c86, transparent 60%), radial-gradient(100% 70% at 0% 100%, #841d4f, transparent 60%), #3c0a22" class="col g12">
       <div class="row between"><span class="logo" style="font-size:12px">SERIE<span style="color:#fff;-webkit-text-fill-color:#fff">ADDICT</span></span><span class="xs" style="opacity:.8">@charlotte</span></div>
       <span class="h-xl" style="font-size:30px">La détective<br>des intrigues</span>
       <div class="col g8">${[['Mystère', 92], ['Personnages complexes', 84], ['Tension', 77]].map(([t, p]) => `<div class="col g4"><div class="row between xs b"><span>${t}</span><span>${p} %</span></div><div style="height:6px;border-radius:6px;background:rgba(255,255,255,.2)"><i style="display:block;height:100%;width:${p}%;border-radius:6px;background:#fff"></i></div></div>`).join('')}</div>
@@ -369,7 +369,7 @@ const R1 = `<div class="scr">
 
 const R2 = `<div class="scr">
   ${back('Rattrape-moi', 'Westworld')}
-  <div class="pad"><div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#3d1530,#0f3546)" class="col g6"><span class="pill gold">${ic('eyeoff', 'xs')} Zéro spoiler</span><span class="h-m" style="font-size:20px">Tout ce qu'il faut savoir jusqu'à S2 · E4</span><span class="xs" style="color:#cfd8dc">2 minutes de lecture · rédigé par la rédaction SerieAddict</span></div></div>
+  <div class="pad"><div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#3c0a22,#072631)" class="col g6"><span class="pill gold">${ic('eyeoff', 'xs')} Zéro spoiler</span><span class="h-m" style="font-size:20px">Tout ce qu'il faut savoir jusqu'à S2 · E4</span><span class="xs" style="color:#cfd8dc">2 minutes de lecture · rédigé par la rédaction SerieAddict</span></div></div>
   <div class="pad col g10 mt14">
     ${[['Saison 1', 'Dans un parc futuriste, des androïdes rejouent chaque jour les mêmes histoires. Dolores et Maeve commencent à se souvenir.'], ['Saison 2 · E1 à E4', 'Les hôtes se sont révoltés. Dolores mène une armée vers la Vallée au-delà ; Bernard reconstitue ses souvenirs.']].map(([t, d]) => `<div class="card col g6" style="padding:14px"><span class="b small">${t}</span><p class="small" style="color:#cfd8dc">${d}</p></div>`).join('')}
   </div>
@@ -422,7 +422,7 @@ const FEED2 = feed('Mindhunter', { i: 0, match: 96, meta: 'Crime · Thriller · 
 const FEED3 = feed('Slow Horses', { i: 1, match: 93, meta: 'Espionnage · Humour noir · 4 saisons', why: 'Comme Mindhunter, que tu viens d\'ajouter : des enquêtes lentes et tendues.', platform: 'Sur Apple TV · inclus', platformHot: 1, peek: 'Devs', hint: '↓ Glisse vers le bas pour revenir' });
 
 /* Rattrape-moi en stories : une carte par saison, glisser vers la gauche = suivante */
-const R2S = `<div class="scr" style="padding:0;position:relative;height:100%;overflow:hidden;background:radial-gradient(100% 60% at 100% 0%, #2fa3c7, transparent 60%), radial-gradient(100% 70% at 0% 100%, #d13c84, transparent 60%), #160b22">
+const R2S = `<div class="scr" style="padding:0;position:relative;height:100%;overflow:hidden;background:radial-gradient(100% 60% at 100% 0%, #1e6c86, transparent 60%), radial-gradient(100% 70% at 0% 100%, #841d4f, transparent 60%), #3c0a22">
   <div style="position:relative;z-index:2;display:flex;flex-direction:column;height:100%">
     <div class="row g6" style="padding:16px 16px 0">${[1, 1, 0, 0].map((on, i) => `<i style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,${on ? (i === 1 ? .95 : .95) : .3})"></i>`).join('')}</div>
     <div class="topbar"><span class="row g8"><span class="av" style="width:30px;height:30px;font-size:10px">SA</span><span class="small b">Rattrape-moi · Westworld</span></span><span class="ib ghost" style="width:36px;height:36px">${ic('x', 's')}</span></div>
@@ -435,7 +435,7 @@ const R2S = `<div class="scr" style="padding:0;position:relative;height:100%;ove
 </div>`;
 
 /* Quiz du jour : une question par carte */
-const QZ = `<div class="scr" style="padding:0;background:radial-gradient(90% 40% at 50% 0%, #4a1631, transparent 70%), #000">
+const QZ = `<div class="scr" style="padding:0;background:radial-gradient(90% 40% at 50% 0%, #3c0a22, transparent 70%), #000">
   <div class="row g6" style="padding:16px 16px 0">${[1, 1, 1, 0, 0].map((on) => `<i style="flex:1;height:3px;border-radius:3px;background:${on ? 'var(--gold)' : 'rgba(255,255,255,.25)'}"></i>`).join('')}</div>
   <div class="topbar"><span class="small b">Quiz du jour · Breaking Bad</span><span class="pill gold">${ic('bolt', 'xs')} 120 pts</span></div>
   <div class="pad"><div style="border-radius:26px;overflow:hidden;position:relative;height:250px;background:${img('Breaking Bad')} center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9))"></div><span class="over" style="position:absolute;left:16px;bottom:44px;color:#d6dee2">Question 3 sur 5</span><span class="h-m" style="position:absolute;left:16px;right:16px;bottom:14px;font-size:19px">Le nom du restaurant de Gus Fring ?</span></div></div>
@@ -451,7 +451,7 @@ const V2 = (() => {
 /* =========================================================
    A. Premiers pas
    ========================================================= */
-const A1 = `<div class="scr" style="padding:0;background:radial-gradient(120% 60% at 50% 0%, #4a1631 0%, transparent 60%), radial-gradient(90% 50% at 100% 60%, #0d3a4c 0%, transparent 70%), #000">
+const A1 = `<div class="scr" style="padding:0;background:radial-gradient(120% 60% at 50% 0%, #3c0a22 0%, transparent 60%), radial-gradient(90% 50% at 100% 60%, #0d3a4c 0%, transparent 70%), #000">
   <div style="position:relative;height:430px;margin-top:20px">
     <div style="position:absolute;left:22px;top:60px;transform:rotate(-9deg)">${P('Severance', { w: 118, h: 170 })}</div>
     <div style="position:absolute;left:136px;top:18px;transform:rotate(2deg);z-index:2;box-shadow:0 20px 50px rgba(0,0,0,.6);border-radius:14px">${P('Dark', { w: 128, h: 186 })}</div>
@@ -510,7 +510,7 @@ const A3 = `<div class="scr">
   <div class="pad mt26"><span class="btn w full">Continuer</span><p class="xs dim mt10" style="text-align:center">Tu pourras changer ça à tout moment.</p></div>
 </div>`;
 
-const A4 = `<div class="scr" style="background:radial-gradient(90% 40% at 50% 0%, #3d1530, transparent 70%), #000">
+const A4 = `<div class="scr" style="background:radial-gradient(90% 40% at 50% 0%, #3c0a22, transparent 70%), #000">
   <div class="pad col g10" style="padding-top:18px">
     <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i></div>
     <span class="over">Étape 3 sur 3</span>
@@ -557,7 +557,7 @@ const A5 = `${dimHome}<div class="veil"></div>
   <span class="small muted" style="text-align:center">Plus tard</span>
 </div>`;
 
-const A6 = `<div class="scr" style="background:radial-gradient(100% 40% at 0% 0%, #3d1530, transparent 70%), radial-gradient(80% 40% at 100% 30%, #0b3446, transparent 70%), #000">
+const A6 = `<div class="scr" style="background:radial-gradient(100% 40% at 0% 0%, #3c0a22, transparent 70%), radial-gradient(80% 40% at 100% 30%, #072631, transparent 70%), #000">
   ${back('', '')}
   <div class="pad col g10 mt20">
     <span class="logo" style="font-size:16px">SERIE<span>ADDICT</span></span>
@@ -581,7 +581,7 @@ const A6 = `<div class="scr" style="background:radial-gradient(100% 40% at 0% 0%
    ========================================================= */
 /* Encart publicitaire de la version gratuite (discret, un seul par écran) */
 const ad = `<div class="pad mt26"><div class="card row g12" style="padding:12px 14px;border-style:dashed"><span class="pill dark">Pub</span><span class="xs muted" style="flex:1">Emplacement publicitaire, version gratuite</span><span class="xs c-gold b">Retirer avec Premium ›</span></div></div>`;
-const premiumLock = (title, text) => `<div class="card col g8" style="padding:16px;align-items:center;text-align:center;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(180deg,#0a161d,var(--s1))"><span class="c-gold">${ic('lock')}</span><span class="b small">${title}</span><span class="xs muted">${text}</span><span class="btn sm" style="background:var(--gold);color:#000">Essayer Premium</span></div>`;
+const premiumLock = (title, text) => `<div class="card col g8" style="padding:16px;align-items:center;text-align:center;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(180deg,#011921,var(--s1))"><span class="c-gold">${ic('lock')}</span><span class="b small">${title}</span><span class="xs muted">${text}</span><span class="btn sm" style="background:var(--gold);color:#000">Essayer Premium</span></div>`;
 
 const B1 = `<div class="scr">
   <div class="topbar"><span class="logo">SERIE<span>ADDICT</span></span><div class="row g8"><span class="ib">${ic('search')}</span><span class="ib">${ic('bell')}<span class="dot"></span></span></div></div>
@@ -615,7 +615,7 @@ const B1 = `<div class="scr">
   ${sec('À noter')}
   <div class="pad"><div class="card row g12" style="padding:10px 12px">${P('Dark', { w: 42, h: 58, notitle: true })}<div class="col g4" style="flex:1"><span class="b small">Dark · S1 · E8</span><span class="xs muted">Vu hier</span></div>${stars(0, 18)}</div></div>
 
-  <div class="pad mt20"><div class="card row g12" style="padding:14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(135deg,#0a161d,var(--s1))"><span class="c-gold">${ic('bolt')}</span><div class="col" style="flex:1"><span class="b small">Défi du jour · Quiz Breaking Bad</span><span class="xs muted">5 questions · + 50 points</span></div><span class="btn w sm">Jouer</span></div></div>
+  <div class="pad mt20"><div class="card row g12" style="padding:14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(135deg,#011921,var(--s1))"><span class="c-gold">${ic('bolt')}</span><div class="col" style="flex:1"><span class="b small">Défi du jour · Quiz Breaking Bad</span><span class="xs muted">5 questions · + 50 points</span></div><span class="btn w sm">Jouer</span></div></div>
 
   <div class="pad mt20"><span class="small c-teal b" style="display:flex;justify-content:center;gap:6px">${ic('list', 's')} Personnaliser mon accueil</span></div>
 </div>${tabbar('Accueil')}`;
@@ -852,12 +852,12 @@ const D2 = `<div class="scr">
   </div>
   <div class="pad mt14 list">
     ${D2eps.map(([t, m, seen], i) => `<div class="row g12" style="padding:12px 0;align-items:flex-start">
-      <div style="position:relative">${P('S2E' + i + t, { w: 104, h: 62, notitle: true, seen })}<span class="pill dark" style="position:absolute;left:5px;bottom:5px">${m} min</span></div>
+      <div style="position:relative">${P('S2E' + i + t, { w: 66, h: 96, notitle: true, seen })}<span class="pill dark" style="position:absolute;left:5px;bottom:5px">${m} min</span></div>
       <div class="col g4" style="flex:1;min-width:0"><span class="xs ${seen ? 'muted' : 'c-mag'} b">ÉPISODE ${i + 1}${i === 5 ? ' · PROCHAIN' : ''}</span><span class="b small">${t}</span>
       ${seen ? `<span class="xs" style="color:var(--gold)">${'★'.repeat(4)}</span>` : `<span class="spoil" style="padding:4px 8px;font-size:10.5px">${ic('eyeoff', 'xs')} Résumé masqué</span>`}</div>
       <span class="chk-c ${seen ? 'on' : ''}">${seen ? ic('check', 'xs') : ''}</span></div>`).join('')}
     <div class="row g12" style="padding:12px 0;align-items:flex-start">
-      <div style="position:relative">${P('Severance special', { w: 104, h: 62, notitle: true })}<span class="pill gold" style="position:absolute;left:5px;bottom:5px">Spécial</span></div>
+      <div style="position:relative">${P('Severance special', { w: 66, h: 96, notitle: true })}<span class="pill gold" style="position:absolute;left:5px;bottom:5px">Spécial</span></div>
       <div class="col g4" style="flex:1"><span class="xs c-gold b">ÉPISODE SPÉCIAL</span><span class="b small">Dans les coulisses de Lumon</span><span class="xs muted">Facultatif, hors progression</span></div>
       <span class="chk-c"></span></div>
   </div>
@@ -895,7 +895,7 @@ const D3 = `<div class="scr" style="padding-top:0">
 const D4 = `<div class="scr">
   ${back('Rattrape-moi', 'Westworld')}
   <div class="pad col g10">
-    <div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#3d1530,#0f3546)" class="col g8">
+    <div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#3c0a22,#072631)" class="col g8">
       <span class="pill gold">${ic('rewind', 'xs')} Résumé sans spoilers</span>
       <span class="h-m" style="font-size:20px">Tu reprends après 11 mois</span>
       <p class="small" style="color:#cfd8dc">On te remet en tête l'essentiel jusqu'à <b>S2 · E4</b>. Rien au-delà.</p>
@@ -920,7 +920,7 @@ const E1 = `<div class="scr">
   <div class="topbar"><span class="h-l" style="font-size:22px">Découvrir</span><span class="ib">${ic('search')}</span></div>
   <div class="pad"><div class="field">${ic('search')} Une série, un acteur, une ambiance…</div></div>
   <div class="pad mt14">
-    <div style="border-radius:26px;overflow:hidden;position:relative;background:radial-gradient(90% 80% at 100% 0%, #2fa3c7 0%, transparent 60%), linear-gradient(135deg,#d13c84,#5a2a8a);padding:22px 20px 20px" class="col g10">
+    <div style="border-radius:26px;overflow:hidden;position:relative;background:radial-gradient(90% 80% at 100% 0%, #1e6c86 0%, transparent 60%), linear-gradient(135deg,#841d4f,#5a2a8a);padding:22px 20px 20px" class="col g10">
       <span class="over" style="color:rgba(255,255,255,.85)">${ic('shuffle', 'xs')} En 30 secondes</span>
       <span class="h-xl" style="font-size:28px">Que regarder<br>ce soir ?</span>
       <p class="small" style="max-width:24ch">Ton humeur, ton temps, tes plateformes. On choisit pour toi.</p>
@@ -940,7 +940,7 @@ const E1 = `<div class="scr">
   </div>
   ${sec('Explorer par genre')}
   <div class="pad" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-    ${[['Thriller', '#6b2f45'], ['Science-fiction', '#264f6e'], ['Comédie', '#6a5326'], ['Drame', '#41356f'], ['Crime', '#5f6672'], ['Animation', '#2f5d55']].map(([g, c]) => `<div style="height:66px;border-radius:16px;padding:12px;background:linear-gradient(135deg,${c},#0a0f12);display:flex;align-items:flex-end" class="h-s">${g}</div>`).join('')}
+    ${[['Thriller', '#841d4f'], ['Science-fiction', '#1e6c86'], ['Comédie', '#6a5326'], ['Drame', '#3c0a22'], ['Crime', '#5f6672'], ['Animation', '#1e6c86']].map(([g, c]) => `<div style="height:66px;border-radius:16px;padding:12px;background:linear-gradient(135deg,${c},#0a0f12);display:flex;align-items:flex-end" class="h-s">${g}</div>`).join('')}
   </div>
   ${ad}
 </div>${tabbar('Découvrir')}`;
@@ -961,14 +961,14 @@ const E2 = `<div class="scr">
   <div class="pad col g10 mt20"><span class="h-s">Une préférence ?</span>
     <div class="seg"><span class="on">Peu importe</span><span>Mini-série</span><span>Plusieurs saisons</span></div>
   </div>
-  <div class="pad mt20"><div class="card col g10" style="padding:14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(180deg,#0a161d,var(--s1))">
+  <div class="pad mt20"><div class="card col g10" style="padding:14px;border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:linear-gradient(180deg,#011921,var(--s1))">
     <div class="row between"><span class="h-s">Options avancées</span><span class="pill gold">${ic('lock', 'xs')} Premium</span></div>
     ${['Exclure les séries que j\'ai déjà vues', 'Tenir compte de mes genres et personnages préférés', 'S\'inspirer des goûts de mes amis'].map((t) => `<div class="row g10 small" style="opacity:.75"><span class="tog"></span>${t}</div>`).join('')}
   </div></div>
   <div class="pad mt26"><span class="btn p full">${ic('shuffle', 's')} Trouver ma série</span></div>
 </div>`;
 
-const E3 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 10%, #2a1a3c, transparent 70%), #000">
+const E3 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 10%, #3c0a22, transparent 70%), #000">
   ${back('Notre sélection pour toi', 'Que regarder ce soir ?')}
   <div class="pad col" style="align-items:center;gap:14px;margin-top:6px">
     <div style="position:relative;box-shadow:0 30px 70px rgba(209,60,132,.25);border-radius:18px">${P('Dark', { w: 220, h: 316, fs: 26 })}<span class="pill mag" style="position:absolute;top:12px;left:12px">97 % pour toi</span></div>
@@ -1021,24 +1021,24 @@ const E5 = `<div class="scr" style="padding-top:0">
 const game = (t, s, ico, bg, tag) => `<div style="border-radius:20px;padding:14px;min-height:150px;background:${bg};display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
   <span class="ib ghost" style="width:38px;height:38px">${ic(ico, 's')}</span>${tag ? `<span class="pill dark" style="position:absolute;top:14px;right:14px">${tag}</span>` : ''}
   <div class="col g4"><span class="h-s">${t}</span><span class="xs" style="color:rgba(255,255,255,.75)">${s}</span></div></div>`;
-const F1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%, #4a1631, transparent 70%), radial-gradient(90% 35% at 100% 15%, #0f3546, transparent 70%), #000">
+const F1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%, #3c0a22, transparent 70%), radial-gradient(90% 35% at 100% 15%, #072631, transparent 70%), #000">
   <div class="topbar"><span class="h-l" style="font-size:22px">Jouer</span><span class="pill gold">${ic('flame', 'xs')} 12 jours</span></div>
   <div class="pad">
-    <div class="card col g12" style="padding:16px;background:linear-gradient(135deg,#0a161d,#0a161d);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))">
-      <div class="row g12"><span class="av" style="width:52px;height:52px;font-size:18px;background:linear-gradient(135deg,#2fa3c7,#d13c84)">12</span><div class="col g4" style="flex:1"><span class="over c-gold">Niveau 12</span><span class="h-s">Exploratrice de séries</span></div><span class="h-m c-gold">2 640<span class="xs muted"> pts</span></span></div>
+    <div class="card col g12" style="padding:16px;background:linear-gradient(135deg,#011921,#011921);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))">
+      <div class="row g12"><span class="av" style="width:52px;height:52px;font-size:18px;background:linear-gradient(135deg,#1e6c86,#841d4f)">12</span><div class="col g4" style="flex:1"><span class="over c-gold">Niveau 12</span><span class="h-s">Exploratrice de séries</span></div><span class="h-m c-gold">2 640<span class="xs muted"> pts</span></span></div>
       ${prog(64, 'gold')}<span class="xs muted">360 points avant le niveau 13 · Sériephile confirmée</span>
     </div>
   </div>
   ${sec('Récompenses quotidiennes', 'Jour 5')}
-  <div class="pad" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">${[10, 10, 15, 15, 20, 25, 50].map((p, i) => `<div class="col" style="align-items:center;gap:4px;padding:9px 0;border-radius:14px;${i < 4 ? 'background:color-mix(in srgb,var(--gold) 16%,var(--s1));border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line))' : i === 4 ? 'background:var(--gold);color:#000;box-shadow:0 0 22px rgba(47,163,199,.45)' : 'background:var(--s1);border:1px solid var(--line)'}"><span class="xs b">J${i + 1}</span><span style="font-size:16px">${i < 4 ? '✓' : i === 6 ? '🎁' : '⭐'}</span><span class="xs b">+${p}</span></div>`).join('')}</div>
+  <div class="pad" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">${[10, 10, 15, 15, 20, 25, 50].map((p, i) => `<div class="col" style="align-items:center;gap:4px;padding:9px 0;border-radius:14px;${i < 4 ? 'background:color-mix(in srgb,var(--gold) 16%,var(--s1));border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line))' : i === 4 ? 'background:var(--gold);color:#000;box-shadow:0 0 22px rgba(30,108,134,.45)' : 'background:var(--s1);border:1px solid var(--line)'}"><span class="xs b">J${i + 1}</span><span style="font-size:16px">${i < 4 ? '✓' : i === 6 ? '🎁' : '⭐'}</span><span class="xs b">+${p}</span></div>`).join('')}</div>
   ${sec('Défi du jour')}
   <div class="pad"><div style="border-radius:22px;padding:18px;background:var(--grad)" class="col g8"><div class="row between"><span class="pill dark">Quiz Breaking Bad</span><span class="small b">+ 50 pts</span></div><span class="h-m">5 questions, 60 secondes</span><span class="small" style="opacity:.9">1 248 joueurs aujourd'hui · ton meilleur score 4/5</span><span class="btn w sm mt6" style="width:fit-content">Jouer ${ic('right', 's')}</span></div></div>
   ${sec('Les jeux')}
   <div class="pad" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    ${game('Duel du jour', 'Breaking Bad ou Les Soprano ?', 'bolt', 'linear-gradient(160deg,#6b2f45,#1a0a12)', 'Nouveau')}
-    ${game('Series Match', 'Quoi regarder à deux', 'heart', 'linear-gradient(160deg,#264f6e,#07121b)', '')}
-    ${game('Devine la série', 'Indices, images floutées', 'search', 'linear-gradient(160deg,#41356f,#0d0a1c)', '')}
-    ${game('Quel perso es-tu ?', 'Test de personnalité', 'user', 'linear-gradient(160deg,#2f5d55,#08140f)', '')}
+    ${game('Duel du jour', 'Breaking Bad ou Les Soprano ?', 'bolt', 'linear-gradient(160deg,#841d4f,#1a0a12)', 'Nouveau')}
+    ${game('Series Match', 'Quoi regarder à deux', 'heart', 'linear-gradient(160deg,#1e6c86,#011921)', '')}
+    ${game('Devine la série', 'Indices, images floutées', 'search', 'linear-gradient(160deg,#3c0a22,#0d0a1c)', '')}
+    ${game('Quel perso es-tu ?', 'Test de personnalité', 'user', 'linear-gradient(160deg,#1e6c86,#08140f)', '')}
   </div>
   ${sec('Classement entre amis', 'Cette semaine')}
   <div class="pad list">
@@ -1046,7 +1046,7 @@ const F1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%,
   </div>
 </div>${tabbar('Jouer')}`;
 
-const F2 = `<div class="scr" style="background:radial-gradient(90% 40% at 50% 0%, #2a1a3c, transparent 70%), #000">
+const F2 = `<div class="scr" style="background:radial-gradient(90% 40% at 50% 0%, #3c0a22, transparent 70%), #000">
   <div class="topbar"><span class="ib">${ic('x')}</span><span class="h-s">Question 3 / 5</span><span class="pill gold">${ic('bolt', 'xs')} 120</span></div>
   <div class="pad"><div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><p class="xs dim mt6">Jouable sans compte · crée-en un pour garder ton score</p></div>
   <div class="pad mt14"><div class="row between xs muted"><span>Temps restant</span><span class="b" style="color:var(--fg)">0:14</span></div><div class="prog mt6" style="height:6px"><i style="width:46%;background:var(--magenta)"></i></div></div>
@@ -1072,13 +1072,13 @@ const F3 = `<div class="scr">
   <div class="pad mt20"><span class="btn o full">${ic('share', 's')} Partager mon vote</span></div>
 </div>${tabbar('Jouer')}`;
 
-const F4 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #0f3546, transparent 70%), #000">
+const F4 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #072631, transparent 70%), #000">
   ${back('Series Match', 'Jouer')}
   <div class="pad col" style="align-items:center;gap:12px;text-align:center">
     <div class="row" style="justify-content:center;gap:0">
       <span class="av" style="width:72px;height:72px;font-size:24px;border:3px solid #000">C</span>
       <span style="margin-inline:-14px;z-index:2">${ring(87, '87 %', 'var(--magenta)', 84)}</span>
-      <span class="av" style="width:72px;height:72px;font-size:24px;border:3px solid #000;background:linear-gradient(135deg,#2fa3c7,#7c43a3)">N</span>
+      <span class="av" style="width:72px;height:72px;font-size:24px;border:3px solid #000;background:linear-gradient(135deg,#1e6c86,#3c0a22)">N</span>
     </div>
     <span class="h-l">Charlotte & Nadia</span>
     <span class="small muted">87 % de compatibilité séries. Vous aimez toutes les deux les thrillers et les fins qui divisent.</span>
@@ -1091,7 +1091,7 @@ const F4 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0
   <div class="pad mt20 col g10"><span class="btn p full">${ic('play', 's')} On regarde Mindhunter ce soir</span><span class="btn w full">${ic('plus', 's')} Ajouter à notre liste commune</span><span class="btn o full">${ic('users', 's')} Faire un match avec un autre ami</span></div>
 </div>${tabbar('Jouer')}`;
 
-const badge = (e, t, on, sub) => `<div class="col" style="align-items:center;gap:6px;text-align:center"><span style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:28px;${on ? 'background:linear-gradient(135deg,#2fa3c733,#d13c8433);border:1px solid color-mix(in srgb,var(--gold) 50%,var(--line))' : 'background:var(--s1);border:1px solid var(--line);filter:grayscale(1);opacity:.45'}">${e}</span><span class="xs b">${t}</span><span class="xs dim" style="font-size:10px">${sub}</span></div>`;
+const badge = (e, t, on, sub) => `<div class="col" style="align-items:center;gap:6px;text-align:center"><span style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:28px;${on ? 'background:linear-gradient(135deg,#1e6c8633,#841d4f33);border:1px solid color-mix(in srgb,var(--gold) 50%,var(--line))' : 'background:var(--s1);border:1px solid var(--line);filter:grayscale(1);opacity:.45'}">${e}</span><span class="xs b">${t}</span><span class="xs dim" style="font-size:10px">${sub}</span></div>`;
 const F5 = `<div class="scr">
   ${back('Défis et badges', 'Jouer')}
   ${sec('Défis d\'octobre', 'Il reste 9 jours')}
@@ -1112,7 +1112,7 @@ const F5 = `<div class="scr">
    G. Profil
    ========================================================= */
 const G1 = `<div class="scr" style="padding-top:0">
-  <div style="position:relative;height:150px;background:radial-gradient(80% 120% at 0% 0%, #d13c84, transparent 60%), radial-gradient(80% 120% at 100% 0%, #2fa3c7, transparent 60%), #1a0f24">
+  <div style="position:relative;height:150px;background:radial-gradient(80% 120% at 0% 0%, #841d4f, transparent 60%), radial-gradient(80% 120% at 100% 0%, #1e6c86, transparent 60%), #3c0a22">
     <div class="topbar" style="position:absolute;inset:0 0 auto;justify-content:flex-end;gap:8px"><span class="ib ghost">${ic('share')}</span><span class="ib ghost">${ic('gear')}</span></div>
   </div>
   <div class="pad" style="margin-top:-46px;position:relative;z-index:2">
@@ -1129,11 +1129,11 @@ const G1 = `<div class="scr" style="padding-top:0">
   <div class="pad" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">${['Six Feet Under', 'The Wire', 'Lost', 'BoJack Horseman'].map((t, i) => P(t, { w: '100%', h: 118, fs: 10, tl: `<span class="pill dark">${i + 1}</span>` })).join('')}</div>
   ${sec('Mes personnages favoris', 'Modifier')}
   <div class="rail">${[['Dolores', 'Westworld'], ['Maeve', 'Westworld'], ['Bernard', 'Westworld'], ['William', 'Westworld']].map(([n, s]) => `<div class="col g6" style="width:78px;flex-shrink:0;align-items:center;text-align:center"><span style="width:68px;height:68px;border-radius:50%;overflow:hidden;display:block">${P(n, { w: 68, h: 68, notitle: true })}</span><span class="xs b">${n}</span><span class="xs dim" style="font-size:10px">${s}</span></div>`).join('')}</div>
-  <div class="pad mt20"><div class="card row g12" style="padding:14px;background:linear-gradient(135deg,#0a161d,#10232d);border-color:color-mix(in srgb,var(--gold) 45%,var(--line))"><span class="c-gold">${ic('trophy')}</span><div class="col" style="flex:1"><span class="b small">Ton Wrapped 2026 est prêt</span><span class="xs muted">3 cartes gratuites · bilan complet avec Premium</span></div>${ic('right', 's')}</div></div>
+  <div class="pad mt20"><div class="card row g12" style="padding:14px;background:linear-gradient(135deg,#011921,#072631);border-color:color-mix(in srgb,var(--gold) 45%,var(--line))"><span class="c-gold">${ic('trophy')}</span><div class="col" style="flex:1"><span class="b small">Ton Wrapped 2026 est prêt</span><span class="xs muted">3 cartes gratuites · bilan complet avec Premium</span></div>${ic('right', 's')}</div></div>
   ${sec('Mon ADN séries', 'Voir')}
-  <div class="pad"><div style="border-radius:20px;padding:16px;background:linear-gradient(135deg,#3d1530,#0f3546)" class="row g12">${ic('dna', 'l')}<div class="col g4" style="flex:1"><span class="h-s">La détective des intrigues</span><span class="xs" style="color:#cfd8dc">Thrillers psychologiques, personnages complexes</span></div>${ic('right', 's')}</div></div>
+  <div class="pad"><div style="border-radius:20px;padding:16px;background:linear-gradient(135deg,#3c0a22,#072631)" class="row g12">${ic('dna', 'l')}<div class="col g4" style="flex:1"><span class="h-s">La détective des intrigues</span><span class="xs" style="color:#cfd8dc">Thrillers psychologiques, personnages complexes</span></div>${ic('right', 's')}</div></div>
   ${sec('Badges', '9')}
-  <div class="rail" style="gap:10px">${['🏃', '🔥', '🧠', '🎯', '📺', '🌙'].map((e) => `<span style="width:54px;height:54px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,#2fa3c733,#d13c8433);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line))">${e}</span>`).join('')}</div>
+  <div class="rail" style="gap:10px">${['🏃', '🔥', '🧠', '🎯', '📺', '🌙'].map((e) => `<span style="width:54px;height:54px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,#1e6c8633,#841d4f33);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line))">${e}</span>`).join('')}</div>
   ${sec('Activité récente')}
   <div class="pad list">
     ${[['check', 'A terminé', 'Silo · saison 1', 'Hier'], ['star', 'A noté 5 étoiles', 'Dark', 'Lundi'], ['trophy', 'A gagné le badge', 'Quiz master', 'Lundi']].map(([i, a, t, w]) => `<div class="row g12" style="padding:10px 0"><span class="ib" style="width:36px;height:36px;color:var(--teal)">${ic(i, 's')}</span><span class="small" style="flex:1">${a} <b>${t}</b></span><span class="xs dim">${w}</span></div>`).join('')}
@@ -1162,7 +1162,7 @@ const G2 = `<div class="scr">
 const G3 = `<div class="scr" style="background:#000">
   ${back('Mon ADN séries', 'Profil')}
   <div class="pad">
-    <div style="border-radius:28px;padding:22px 20px;background:radial-gradient(100% 60% at 100% 0%, #2fa3c7, transparent 60%), radial-gradient(100% 70% at 0% 100%, #d13c84, transparent 60%), #1a0f24;position:relative;overflow:hidden" class="col g12">
+    <div style="border-radius:28px;padding:22px 20px;background:radial-gradient(100% 60% at 100% 0%, #1e6c86, transparent 60%), radial-gradient(100% 70% at 0% 100%, #841d4f, transparent 60%), #3c0a22;position:relative;overflow:hidden" class="col g12">
       <div class="row between"><span class="logo" style="font-size:12px">SERIE<span style="color:#fff;-webkit-text-fill-color:#fff">ADDICT</span></span><span class="xs" style="opacity:.8">@charlotte</span></div>
       <span class="over" style="color:rgba(255,255,255,.85)">Mon ADN séries</span>
       <span class="h-xl" style="font-size:30px">La détective<br>des intrigues</span>
@@ -1213,7 +1213,7 @@ const G5 = `<div class="scr">
   <div class="pad row" style="flex-wrap:wrap;gap:8px">${chip('Netflix', true)}${chip('Prime Video', true)}${chip('Apple TV', true)}${chip('+ Ajouter')}</div>
   ${sec('Thème de l\'app')}
   <div class="pad row g10">
-    ${[['SerieAddict', 'linear-gradient(135deg,#d13c84,#2fa3c7)', true, false], ['Upside Down', 'linear-gradient(135deg,#8a1c1c,#140606)', false, true], ['Lumon', 'linear-gradient(135deg,#1f6f5c,#e8f1ee)', false, true], ['Néon', 'linear-gradient(135deg,#7c3cff,#ff3cc8)', false, true]].map(([n, g, on, lock]) => `<div class="col g6" style="flex:1;align-items:center"><span style="width:100%;aspect-ratio:1;border-radius:16px;background:${g};display:grid;place-items:center;${on ? 'outline:2px solid #fff;outline-offset:2px' : ''}">${lock ? `<span class="ib ghost" style="width:30px;height:30px;color:var(--gold)">${ic('lock', 'xs')}</span>` : ''}</span><span class="xs ${on ? 'b' : 'muted'}">${n}</span></div>`).join('')}
+    ${[['SerieAddict', 'linear-gradient(135deg,#841d4f,#1e6c86)', true, false], ['Upside Down', 'linear-gradient(135deg,#8a1c1c,#140606)', false, true], ['Lumon', 'linear-gradient(135deg,#1f6f5c,#e8f1ee)', false, true], ['Néon', 'linear-gradient(135deg,#7c3cff,#ff3cc8)', false, true]].map(([n, g, on, lock]) => `<div class="col g6" style="flex:1;align-items:center"><span style="width:100%;aspect-ratio:1;border-radius:16px;background:${g};display:grid;place-items:center;${on ? 'outline:2px solid #fff;outline-offset:2px' : ''}">${lock ? `<span class="ib ghost" style="width:30px;height:30px;color:var(--gold)">${ic('lock', 'xs')}</span>` : ''}</span><span class="xs ${on ? 'b' : 'muted'}">${n}</span></div>`).join('')}
   </div>
   <p class="pad xs muted mt6">Les thèmes supplémentaires font partie de Premium.</p>
   ${sec('Compte')}
@@ -1246,7 +1246,7 @@ const F6 = `<div class="scr" style="background:radial-gradient(90% 40% at 50% 0%
   <div class="pad mt14"><span class="btn w full">Valider ma réponse</span></div>
 </div>`;
 
-const F7 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 0%, #4a1631, transparent 70%), #000">
+const F7 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 0%, #3c0a22, transparent 70%), #000">
   ${back('Quel personnage es-tu ?', 'Jouer', `<span class="ib">${ic('share')}</span>`)}
   <div class="pad"><span class="over">Ton résultat · test Westworld · 8 questions</span></div>
   <div class="pad mt14">
@@ -1261,7 +1261,7 @@ const F7 = `<div class="scr" style="background:radial-gradient(100% 50% at 50% 0
 </div>${tabbar('Jouer')}`;
 
 /* ---------- Wrapped ---------- */
-const G6 = `<div class="scr" style="padding:0;background:radial-gradient(110% 60% at 0% 0%, #d13c84, transparent 60%), radial-gradient(110% 60% at 100% 100%, #2fa3c7, transparent 60%), #160b22">
+const G6 = `<div class="scr" style="padding:0;background:radial-gradient(110% 60% at 0% 0%, #841d4f, transparent 60%), radial-gradient(110% 60% at 100% 100%, #1e6c86, transparent 60%), #3c0a22">
   <div class="topbar"><span class="ib ghost">${ic('x')}</span><div class="row g6" style="flex:1;margin-inline:14px">${[1, 1, 1, 0, 0, 0].map((on) => `<i style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,${on ? 1 : .3})"></i>`).join('')}</div><span class="ib ghost">${ic('share')}</span></div>
   <div class="pad col g10 mt20">
     <span class="logo" style="font-size:13px">SERIE<span style="color:#fff;-webkit-text-fill-color:#fff">ADDICT</span> WRAPPED</span>
@@ -1274,7 +1274,7 @@ const G6 = `<div class="scr" style="padding:0;background:radial-gradient(110% 60
       <div style="flex:1;border-radius:20px;padding:14px;background:rgba(0,0,0,.35)" class="col g4"><span class="over" style="color:rgba(255,255,255,.8)">Genre n° 1</span><span class="h-s">Thriller</span></div>
       <div style="flex:1;border-radius:20px;padding:14px;background:rgba(0,0,0,.35)" class="col g4"><span class="over" style="color:rgba(255,255,255,.8)">Plus longue série</span><span class="h-s">34 jours 🔥</span></div>
     </div>
-    <div style="border-radius:22px;padding:16px;background:rgba(0,0,0,.45);border:1px solid rgba(47,163,199,.5)" class="col g8">
+    <div style="border-radius:22px;padding:16px;background:rgba(0,0,0,.45);border:1px solid rgba(30,108,134,.5)" class="col g8">
       <div class="row between"><span class="b small">Encore 5 cartes dans ton bilan</span><span class="pill gold">${ic('lock', 'xs')} Premium</span></div>
       <span class="xs" style="opacity:.85">Tes personnages de l'année, ton mois record, tes pays, ton classement parmi tes amis, ton ADN 2026.</span>
     </div>
@@ -1285,7 +1285,7 @@ const G6 = `<div class="scr" style="padding:0;background:radial-gradient(110% 60
 
 /* ---------- H. Premium et boutique ---------- */
 const cmpRow = (t, free, prem) => `<div class="row g8" style="padding:11px 0"><span class="small" style="flex:1">${t}</span><span class="xs" style="width:70px;text-align:center;color:${free === 'no' ? 'var(--dim)' : 'var(--fg)'}">${free === '✓' ? '<span class="c-teal">' + ic('check', 's') + '</span>' : free === 'no' ? 'Non' : free}</span><span class="xs b" style="width:70px;text-align:center;color:var(--gold)">${prem === '✓' ? ic('check', 's') : prem}</span></div>`;
-const H1 = `<div class="scr" style="background:radial-gradient(100% 40% at 50% 0%, #10232d, transparent 70%), #000">
+const H1 = `<div class="scr" style="background:radial-gradient(100% 40% at 50% 0%, #072631, transparent 70%), #000">
   <div class="topbar"><span class="ib">${ic('x')}</span><span class="small muted">Restaurer un achat</span></div>
   <div class="pad col g10" style="align-items:center;text-align:center">
     <span class="burst">${ic('trophy', 'l')}</span>
@@ -1314,7 +1314,7 @@ const H1 = `<div class="scr" style="background:radial-gradient(100% 40% at 50% 0
   <p class="xs dim mt10" style="text-align:center">Paiement via l'App Store ou Google Play. Résiliable à tout moment depuis ton compte.</p></div>
 </div>`;
 
-const H2 = `<div class="scr" style="background:radial-gradient(100% 55% at 50% 20%, #10232d, transparent 70%), #000">
+const H2 = `<div class="scr" style="background:radial-gradient(100% 55% at 50% 20%, #072631, transparent 70%), #000">
   <div class="pad col" style="align-items:center;text-align:center;gap:14px;padding-top:90px">
     <span class="burst" style="width:130px;height:130px">${ic('trophy', 'l')}</span>
     <span class="pill gold">Paiement confirmé</span>
@@ -1329,7 +1329,7 @@ const H2 = `<div class="scr" style="background:radial-gradient(100% 55% at 50% 2
 
 const H3 = `<div class="scr">
   ${back('Mon abonnement', 'Réglages')}
-  <div class="pad"><div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#10232d,#10232d);border:1px solid color-mix(in srgb,var(--gold) 45%,var(--line))" class="col g8">
+  <div class="pad"><div style="border-radius:22px;padding:18px;background:linear-gradient(135deg,#072631,#072631);border:1px solid color-mix(in srgb,var(--gold) 45%,var(--line))" class="col g8">
     <div class="row between"><span class="pill gold">${ic('trophy', 'xs')} Premium annuel</span><span class="xs c-green b">Actif</span></div>
     <span class="h-l">19,99 € / an</span>
     <span class="small muted">Prochain renouvellement le 23 octobre 2027</span>
@@ -1387,7 +1387,7 @@ const D5 = `<div class="scr">
 </div>${tabbar('Mes séries')}`;
 
 /* ---------- E6 : recommandations avancées (Premium) ---------- */
-const E6 = `<div class="scr" style="background:radial-gradient(100% 35% at 50% 0%, #10232d, transparent 70%), #000">
+const E6 = `<div class="scr" style="background:radial-gradient(100% 35% at 50% 0%, #072631, transparent 70%), #000">
   ${back('Recommandations avancées', 'Premium', `<span class="pill gold" style="margin-left:8px">${ic('trophy', 'xs')} Premium</span>`)}
   <div class="pad col g6"><span class="h-l">Choisies pour toi,<br><span class="gtext">rien que pour toi</span></span><span class="small muted">D'après tes 142 séries vues, tes notes, tes personnages préférés et ce que regardent tes amis.</span></div>
   <div class="rail mt14" style="gap:8px">${chip('Sur mes plateformes', true)}${chip('Pas encore vues', true)}${chip('Moins de 3 saisons')}${chip('Anglais VOST')}</div>
@@ -1398,7 +1398,7 @@ const E6 = `<div class="scr" style="background:radial-gradient(100% 35% at 50% 0
 </div>${tabbar('Découvrir')}`;
 
 /* ---------- G7 : le test ADN séries ---------- */
-const G7 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #2a1a3c, transparent 70%), #000">
+const G7 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0%, #3c0a22, transparent 70%), #000">
   <div class="topbar"><span class="ib">${ic('x')}</span><span class="h-s">Test ADN séries</span><span class="small muted">4 / 10</span></div>
   <div class="pad"><div class="steps">${[1, 1, 1, 1, 0, 0, 0, 0, 0, 0].map((on) => `<i class="${on ? 'on' : ''}"></i>`).join('')}</div></div>
   <div class="pad col g10 mt26"><span class="over">Question 4</span><span class="h-l">Ce qui te garde<br>devant une série ?</span></div>
@@ -1411,11 +1411,11 @@ const G7 = `<div class="scr" style="background:radial-gradient(100% 45% at 50% 0
 
 /* ---------- G8 : profil d'un ami ---------- */
 const G8 = `<div class="scr" style="padding-top:0">
-  <div style="position:relative;height:130px;background:radial-gradient(80% 120% at 100% 0%, #2fa3c7, transparent 60%), radial-gradient(80% 120% at 0% 0%, #7c43a3, transparent 60%), #0e1424">
+  <div style="position:relative;height:130px;background:radial-gradient(80% 120% at 100% 0%, #1e6c86, transparent 60%), radial-gradient(80% 120% at 0% 0%, #3c0a22, transparent 60%), #0e1424">
     <div class="topbar" style="position:absolute;inset:0 0 auto"><span class="ib ghost">${ic('left')}</span><span class="ib ghost">${ic('chat')}</span></div>
   </div>
   <div class="pad" style="margin-top:-42px;position:relative;z-index:2">
-    <div class="row g12" style="align-items:flex-end"><span class="av" style="width:84px;height:84px;font-size:28px;border:4px solid #000;background:linear-gradient(135deg,#2fa3c7,#7c43a3)">N</span><span class="pill gold" style="margin-bottom:8px">Niveau 15</span></div>
+    <div class="row g12" style="align-items:flex-end"><span class="av" style="width:84px;height:84px;font-size:28px;border:4px solid #000;background:linear-gradient(135deg,#1e6c86,#3c0a22)">N</span><span class="pill gold" style="margin-bottom:8px">Niveau 15</span></div>
     <span class="h-l mt10" style="display:block">Nadia</span>
     <span class="small muted">@nadia · L'âme des grands drames</span>
   </div>
@@ -1447,7 +1447,7 @@ const FW = `<div class="scr" style="padding-top:0;padding-bottom:0">
     <div style="position:absolute;left:18px;right:18px;bottom:8px" class="col g8"><div class="row g6"><span class="pill mag">En pause depuis 11 mois</span><span class="pill teal">Terminée</span></div><span class="h-xl" style="font-size:36px">Westworld</span><span class="small muted">Science-fiction · Western · ★ 4,4</span></div>
   </div>
   <div class="pad mt14"><div class="card row g12" style="padding:14px">${ring(47, '47%', 'var(--teal)', 54, 'on-s1')}<div class="col g4" style="flex:1"><span class="b">17 épisodes sur 36</span><span class="xs muted">Arrêtée à S2 · E4 · The Riddle of the Sphinx</span></div></div></div>
-  <div class="pad mt10">${hot(1, `<div style="border-radius:20px;padding:16px;background:linear-gradient(135deg,#3d1530,#0f3546)" class="row g12"><span class="c-gold">${ic('rewind', 'l')}</span><div class="col g4" style="flex:1"><span class="h-s">Rattrape-moi</span><span class="xs" style="color:#cfd8dc">Tout ce que tu as vu, sans spoiler, en 2 minutes</span></div><span class="btn w sm">Lire</span></div>`, 'border-radius:20px')}</div>
+  <div class="pad mt10">${hot(1, `<div style="border-radius:20px;padding:16px;background:linear-gradient(135deg,#3c0a22,#072631)" class="row g12"><span class="c-gold">${ic('rewind', 'l')}</span><div class="col g4" style="flex:1"><span class="h-s">Rattrape-moi</span><span class="xs" style="color:#cfd8dc">Tout ce que tu as vu, sans spoiler, en 2 minutes</span></div><span class="btn w sm">Lire</span></div>`, 'border-radius:20px')}</div>
   <div class="pad mt10"><div class="card row g12" style="padding:12px 14px"><span style="width:38px;height:38px;border-radius:11px;background:#7b3fe4;display:grid;place-items:center;font:900 15px var(--display)">H</span><div class="col" style="flex:1"><span class="b small">Sur HBO Max</span><span class="xs muted">Pas dans tes abonnements</span></div><span class="btn o sm">Voir</span></div></div>
   <div class="rail mt20" style="gap:22px;border-bottom:1px solid var(--line)">${['Épisodes', 'Infos', 'Avis 4,4 ★', 'Similaires'].map((t, i) => `<span class="small b" style="padding-bottom:12px;${i ? 'color:var(--muted)' : 'border-bottom:2px solid var(--magenta)'}">${t}</span>`).join('')}</div>
   <div class="pad mt14 list">${[['Saison 1', 10, 10], ['Saison 2', 10, 4], ['Saison 3', 8, 0], ['Saison 4', 8, 0]].map(([s, n, v]) => `<div class="row g12" style="padding:12px 0"><div class="col g6" style="flex:1"><div class="row between"><span class="b small">${s}</span><span class="xs b ${v === n ? 'c-green' : v ? 'c-teal' : 'dim'}">${v}/${n}</span></div>${prog((v / n) * 100)}</div>${ic('right', 's')}</div>`).join('')}</div>
@@ -1481,7 +1481,7 @@ const steps3 = (k) => `<div class="steps">${[0, 1, 2].map((i) => `<i class="${i 
 const check = (size = 36) => `<span class="round" style="width:${size}px;height:${size}px">${ic('check', 'xs')}</span>`;
 
 /* A1 : carrousel avec perspective, l'affiche principale plus grande */
-const A1d = `<div class="scr" style="padding:0;display:flex;flex-direction:column;background:radial-gradient(110% 55% at 50% 0%, #4a1631 0%, transparent 65%), var(--ink)">
+const A1d = `<div class="scr" style="padding:0;display:flex;flex-direction:column;background:radial-gradient(110% 55% at 50% 0%, #3c0a22 0%, transparent 65%), var(--ink)">
   <div style="position:relative;height:380px;margin-top:48px;perspective:900px">
     <div style="position:absolute;left:50%;top:46px;transform:translateX(-50%) translateX(-138px) rotateY(34deg) scale(.8);opacity:.4">${P('Severance', { w: 170, h: 246, notitle: true })}</div>
     <div style="position:absolute;left:50%;top:46px;transform:translateX(-50%) translateX(138px) rotateY(-34deg) scale(.8);opacity:.4">${P('The Bear', { w: 170, h: 246, notitle: true })}</div>
@@ -1538,7 +1538,7 @@ const A3d = `<div class="scr" style="display:flex;flex-direction:column">
 </div>`;
 
 /* B1 à B3 : l'accueil découpé en onglets (Pour toi · Quoi regarder · Défi · Tendances) pour moins défiler */
-const homeTop = `<div class="topbar"><span class="logo">SERIE<span>ADDICT</span></span><div class="row g8"><span class="ib" style="width:38px;height:38px">${ic('search', 's')}</span><span class="ib" style="width:38px;height:38px">${ic('bell', 's')}<span class="dot" style="top:7px;right:8px"></span></span></div></div>`;
+const homeTop = `<div class="topbar"><span class="logo">SERIE<span>ADDICT</span></span><div class="row g8"><span class="ib" style="width:38px;height:38px">${ic('search', 's')}</span><span class="ib" style="width:38px;height:38px">${ic('bell', 's')}<span class="dot" style="top:7px;right:8px"></span></span><span class="av" style="width:38px;height:38px;font-size:14px">C</span></div></div>`;
 const homeTabs = (on) => `<div class="rail" style="gap:24px;margin-top:18px;border-bottom:1px solid rgba(255,255,255,.06)">${['Pour toi', 'Quoi regarder', 'Défi', 'Tendances'].map((t) => `<span class="small" style="flex-shrink:0;padding-bottom:12px;font-weight:${t === on ? 700 : 500};color:${t === on ? 'var(--fg)' : 'var(--muted)'};${t === on ? 'box-shadow:inset 0 -2px 0 var(--fg)' : ''}">${t}</span>`).join('')}</div>`;
 const greet = `<div class="pad"><span class="h-m" style="font-size:19px">Bonsoir Charlotte</span><p class="small muted mt6">3 épisodes t'attendent ce soir.</p></div>`;
 
@@ -1587,13 +1587,13 @@ const C1d = `<div class="scr">
 
 /* C2 : nouvelle proposition, une file d'attente d'épisodes en vignettes larges */
 const epTile = (t, code, name, min, when) => `<div class="row" style="gap:14px;padding:12px 0">
-  <div style="position:relative;width:128px;height:74px;border-radius:14px;overflow:hidden;flex-shrink:0;background:${img(t)} center/cover"><span class="pill dark" style="position:absolute;left:6px;bottom:6px">${min} min</span></div>
+  <div style="position:relative;width:66px;height:96px;border-radius:12px;overflow:hidden;flex-shrink:0;background:${img(t)} center/cover"><span class="pill dark" style="position:absolute;left:6px;bottom:6px">${min} min</span></div>
   <div class="col g4" style="flex:1;min-width:0"><span class="xs muted">${t}</span><span class="small" style="font-weight:700;line-height:1.35">${code} · ${name}</span><span class="xs" style="color:var(--teal)">${when}</span></div>
   ${check(38)}</div>`;
 const C2d = `<div class="scr">
   <div class="topbar"><span class="h-l" style="font-size:24px">Mes séries</span><span class="ib">${ic('plus')}</span></div>
   <div class="pad"><div class="seg"><span>Séries</span><span class="on">Épisodes</span><span>Calendrier</span></div></div>
-  <div class="pad" style="margin-top:22px"><div class="card col g12" style="padding:20px;background:linear-gradient(135deg, #10232d, var(--s1))">
+  <div class="pad" style="margin-top:22px"><div class="card col g12" style="padding:20px;background:linear-gradient(135deg, #072631, var(--s1))">
     <span class="over">Ta file d'attente</span>
     <div class="row between" style="align-items:flex-end"><div class="col g4"><span class="h-l" style="font-size:30px">6 épisodes</span><span class="small muted">environ 5 h 12 de visionnage</span></div><span class="btn p sm">${ic('play', 'xs')} Lancer</span></div>
   </div></div>

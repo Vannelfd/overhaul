@@ -172,13 +172,23 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .code:hover { border-color: var(--teal); }
 /* Charte revue (Divin) : Wine + secondaire sombre, moins de blanc, pas de contours, plus d'air, police plus douce */
 :root {
+  /* Couleurs officielles SerieAddict : primary #841D4F, cyan #1E6C86, wine #3C0A22, dark #011921 */
+  --magenta: #841d4f;
+  --teal: #1e6c86;
+  --gold: #1e6c86;
+  --green: #1e6c86;
+  --grad: linear-gradient(90deg, #841d4f, #1e6c86);
+  --wine: linear-gradient(90deg, #841d4f, #3c0a22);
+  --ink: #011921;
+  --s1: #072631;
+  --s2: #0c3140;
   --line: rgba(255,255,255,.06);
-  --gold: #2fa3c7;
-  --green: #2fa3c7;
-  --wine: linear-gradient(100deg, #a3365f 0%, #5c1d3a 100%);
   --display: "Manrope", "Segoe UI", system-ui, sans-serif;
   --body: "Manrope", "Segoe UI", system-ui, sans-serif;
 }
+/* Titres moins collés au haut de la page */
+.scr { padding-top: 18px; }
+.c-teal, .sec a { color: #5aa9c3; }
 .btn.p, .btn.w { background: var(--wine); color: #fff; }
 .phone { background: var(--ink); }
 .card, .ib, .round, .field, .seg, .chip, .btn.o, .sheet { border: 0; }
