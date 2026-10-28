@@ -308,13 +308,17 @@ const N3 = `<div class="scr">
 </div>${tabbar('Mes séries')}`;
 
 /* ---------- À deux ---------- */
+const jImg = (f, pos = 'center') => `<div style="position:absolute;inset:0;background:url(img/${f}) ${pos}/cover"></div>`;
+const jTile = (t, sub, i, layer) => `<div style="position:relative;overflow:hidden;border-radius:20px;padding:14px;min-height:170px;background:#011921;display:flex;flex-direction:column;justify-content:space-between">${layer}<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,25,33,.1) 0%,rgba(1,25,33,.5) 45%,rgba(1,25,33,.96) 100%)"></div><span class="ib ghost" style="position:relative;width:38px;height:38px">${ic(i, 's')}</span><div class="col g4" style="position:relative"><span class="h-s">${t}</span><span class="xs" style="opacity:.85">${sub}</span></div></div>`;
+const duel = `<div style="position:absolute;inset:0;display:flex"><div style="flex:1;background:url(img/breaking-bad.jpg) center/cover"></div><div style="flex:1;background:url(img/the-sopranos.jpg) center/cover;border-left:2px solid #011921"></div></div><span style="position:absolute;top:50px;left:50%;transform:translateX(-50%);z-index:2;font:800 11px/1 var(--body);background:var(--wine);padding:6px 8px;border-radius:999px">VS</span>`;
+const blurImg = `<div style="position:absolute;inset:-12px;background:url(img/stranger-things.jpg) center/cover;filter:blur(7px)"></div>`;
 const J1 = `<div class="scr" style="background:radial-gradient(90% 35% at 0% 0%, #3c0a22, transparent 70%), radial-gradient(90% 35% at 100% 15%, #072631, transparent 70%), #000">
   <div class="topbar"><span class="h-l" style="font-size:22px">Jouer</span>${xp}</div>
   <div class="pad"><div class="card col g10" style="padding:16px;background:linear-gradient(135deg,#011921,#011921);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))"><div class="row between"><span class="h-s">Niveau 12 · Exploratrice</span><span class="b c-gold">2 640 pts</span></div>${prog(64, 'gold')}</div></div>
   <div class="pad mt14" style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px">${[1, 1, 1, 1, 2, 0, 3].map((st, i) => `<div class="col" style="align-items:center;gap:3px;padding:8px 0;border-radius:12px;${st === 1 ? 'background:color-mix(in srgb,var(--gold) 16%,var(--s1))' : st === 2 ? 'background:var(--gold);color:#000' : 'background:var(--s1)'}"><span class="xs b">J${i + 1}</span><span>${st === 1 ? '✓' : st === 3 ? '🎁' : '⭐'}</span></div>`).join('')}</div>
   <div class="pad mt20" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    ${hot(1, `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,#1e6c86,#011921);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic('heart', 's')}</span><div class="col g4"><span class="h-s">Series Match</span><span class="xs" style="opacity:.8">Quoi regarder à deux</span></div></div>`, 'border-radius:20px')}
-    ${[['Quiz du jour', '5 questions · + 50', 'bolt', '#841d4f'], ['Duel du jour', 'Breaking Bad ou Soprano ?', 'game', '#3c0a22'], ['Devine la série', 'Image floutée', 'search', '#1e6c86']].map(([t, s, i, c]) => `<div style="border-radius:20px;padding:14px;min-height:150px;background:linear-gradient(160deg,${c},#011921);display:flex;flex-direction:column;justify-content:space-between"><span class="ib ghost" style="width:38px;height:38px">${ic(i, 's')}</span><div class="col g4"><span class="h-s">${t}</span><span class="xs" style="opacity:.8">${s}</span></div></div>`).join('')}
+    ${hot(1, jTile('Series Match', 'Quoi regarder à deux', 'heart', jImg('mindhunter.jpg')), 'border-radius:20px')}
+    ${jTile('Quiz du jour', '5 questions · + 50', 'bolt', jImg('breaking-bad.jpg'))}${jTile('Duel du jour', 'Breaking Bad ou Soprano ?', 'game', duel)}${jTile('Devine la série', 'Image floutée', 'search', blurImg)}
   </div>
 </div>${tabbar('Jouer')}`;
 
@@ -1539,7 +1543,7 @@ const A3d = `<div class="scr" style="display:flex;flex-direction:column">
 
 /* B1 à B3 : l'accueil découpé en onglets (Pour toi · Quoi regarder · Défi · Tendances) pour moins défiler */
 const homeTop = `<div class="topbar"><span class="logo">SERIE<span>ADDICT</span></span><div class="row g8"><span class="ib" style="width:38px;height:38px">${ic('search', 's')}</span><span class="ib" style="width:38px;height:38px">${ic('bell', 's')}<span class="dot" style="top:7px;right:8px"></span></span><span class="av" style="width:38px;height:38px;font-size:14px">C</span></div></div>`;
-const homeTabs = (on) => `<div class="rail" style="gap:24px;margin-top:18px;border-bottom:1px solid rgba(255,255,255,.06)">${['Pour toi', 'Quoi regarder', 'Défi', 'Tendances'].map((t) => `<span class="small" style="flex-shrink:0;padding-bottom:12px;font-weight:${t === on ? 700 : 500};color:${t === on ? 'var(--fg)' : 'var(--muted)'};${t === on ? 'box-shadow:inset 0 -2px 0 var(--fg)' : ''}">${t}</span>`).join('')}</div>`;
+const homeTabs = (on) => `<div class="rail" style="gap:24px;margin-top:18px;border-bottom:1px solid rgba(255,255,255,.06)">${['Pour toi', 'Quoi regarder', 'Défi', 'Tendances'].map((t) => `<span class="small" style="flex-shrink:0;padding-bottom:10px;border-bottom:2px solid ${t === on ? 'var(--fg)' : 'transparent'};font-weight:${t === on ? 700 : 500};color:${t === on ? 'var(--fg)' : 'var(--muted)'}">${t}</span>`).join('')}</div>`;
 const greet = `<div class="pad"><span class="h-m" style="font-size:19px">Bonsoir Charlotte</span><p class="small muted mt6">3 épisodes t'attendent ce soir.</p></div>`;
 
 const B1d = `<div class="scr">
@@ -1565,6 +1569,22 @@ const B2d = `<div class="scr">
   ${sec('Notre idée pour ce soir')}
   <div class="pad"><div class="card row g14" style="padding:14px;gap:14px">${P('Mindhunter', { w: 92, h: 132, notitle: true })}<div class="col g6" style="flex:1"><span class="pill mag">96 % pour toi</span><span class="h-s" style="font-size:16px">Mindhunter</span><span class="xs muted" style="line-height:1.5">Crime · 2 saisons · Netflix</span><span class="btn p sm mt6">${ic('plus', 'xs')} À voir</span></div></div></div>
   <p class="xs" style="text-align:center;color:var(--muted);margin-top:22px">Plus d'idées dans Découvrir</p>
+</div>${tabbar('Accueil')}`;
+
+/* Onglet Défi : le quiz du jour, la série en cours et les défis de la semaine (tous liés aux épisodes cochés) */
+const bar = (v, max) => `<div style="height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden"><i style="display:block;height:100%;width:${Math.round((v / max) * 100)}%;background:var(--teal);border-radius:6px"></i></div>`;
+const BDEF = `<div class="scr">
+  ${homeTop}${greet}${homeTabs('Défi')}
+  <div class="pad" style="margin-top:22px"><div class="card col" style="padding:18px;gap:14px;border-radius:22px">
+    <div class="row between"><span class="xs muted">Quiz du jour</span><span class="pill gold">${ic('bolt', 'xs')} + 50 pts</span></div>
+    <div class="row g14" style="gap:14px">${P('Breaking Bad', { w: 64, h: 92, notitle: true })}<div class="col g6" style="flex:1"><span class="h-s" style="font-size:17px">Breaking Bad</span><span class="xs muted" style="line-height:1.5">5 questions · 2 minutes<br>Sans spoiler au-delà de ce que tu as vu</span></div></div>
+    <span class="btn p full">${ic('play', 's')} Jouer</span>
+  </div></div>
+  <div class="pad mt14"><div class="card row g12" style="padding:14px 16px;gap:14px"><span class="round" style="width:44px;height:44px;color:var(--teal)">${ic('flame')}</span><div class="col g4" style="flex:1"><span class="small" style="font-weight:700">13 jours d'affilée</span><span class="xs muted">Coche un épisode ou joue au quiz pour continuer</span></div></div></div>
+  ${sec('Défis de la semaine', 'Tout')}
+  <div class="pad col g10">${[['check', 'Coche 5 épisodes', 3, 5, '+ 100 pts'], ['star', 'Note 3 épisodes', 1, 3, '+ 40 pts'], ['spark', 'Commence une nouvelle série', 0, 1, '+ 60 pts']].map(([i, t, v, m, r]) => `<div class="card col" style="padding:14px 16px;gap:10px"><div class="row g12">${`<span style="color:var(--teal)">${ic(i, 's')}</span>`}<span class="small" style="flex:1;font-weight:600">${t}</span><span class="xs muted">${v}/${m}</span></div>${bar(v, m)}<span class="xs" style="color:var(--teal)">${r}</span></div>`).join('')}</div>
+  ${sec('Entre amis', 'Classement')}
+  <div class="pad col" style="gap:12px">${[['N', 'Nadia', '2 980'], ['C', 'Toi', '2 640'], ['M', 'Malik', '2 110']].map(([a, n, pts], i) => `<div class="row g12"><span class="xs muted" style="width:14px">${i + 1}</span><span class="av" style="width:36px;height:36px;font-size:13px">${a}</span><span class="small" style="flex:1;font-weight:${n === 'Toi' ? 700 : 500}">${n}</span><span class="small" style="font-weight:700">${pts}</span></div>`).join('')}</div>
 </div>${tabbar('Accueil')}`;
 
 const B3d = `<div class="scr">
@@ -1644,8 +1664,8 @@ const MODULES = [
   ['A', 'Premiers pas', 'Sans compte : choisir ses séries, ses plateformes, et recevoir ses premières recommandations.', [
     ['A1', 'Bienvenue', A1d, 'P1'], ['A2', 'Choisis 5 séries', A2d, 'P1'], ['A3', 'Tes abonnements', A3d, 'P1'], ['A4', 'Tes premières recommandations', V2.A4, 'P1'], ['A5', 'Créer un compte', V2.A5, 'P1'], ['A6', 'Connexion', V2.A6, 'P1']]],
   ['B', 'Accueil', 'Le rendez-vous quotidien, en onglets pour moins défiler : Pour toi (en ce moment, continuer, du nouveau), Quoi regarder, Défi, Tendances.', [
-    ['B1', 'Accueil · Pour toi', B1d, 'P1'], ['B2', 'Accueil · Quoi regarder', B2d, 'P1'], ['B3', 'Accueil · Tendances', B3d, 'P1'], ['B4', 'Épisode vu, la récompense', REWARD, 'P1'],
-    ['B5', 'Notification', N1, 'P1'], ['B6', 'Annonce d\'une série', N2, 'P1'], ['B7', 'Notifications', V2.B3, 'P1'], ['B8', 'Personnaliser mon accueil', V2.B4, 'P1']]],
+    ['B1', 'Accueil · Pour toi', B1d, 'P1'], ['B2', 'Accueil · Quoi regarder', B2d, 'P1'], ['B3', 'Accueil · Défi', BDEF, 'P1'], ['B4', 'Accueil · Tendances', B3d, 'P1'],
+    ['B5', 'Épisode vu, la récompense', REWARD, 'P1'], ['B6', 'Notification', N1, 'P1'], ['B7', 'Annonce d\'une série', N2, 'P1'], ['B8', 'Notifications', V2.B3, 'P1'], ['B9', 'Personnaliser mon accueil', V2.B4, 'P1']]],
   ['C', 'Mes séries', 'Bibliothèque, épisodes, calendrier, et la fiche de chaque série.', [
     ['C1', 'Ma bibliothèque', C1d, 'P1'], ['C2', 'Épisodes à voir', C2d, 'P1'], ['C3', 'Mon calendrier', V2.C2, 'P1'], ['C4', 'Fiche série', F1(false), 'P1'],
     ['C5', 'Fiche d\'une série en pause', FW, 'P1'], ['C6', 'Saison', V2.D2, 'P1'], ['C7', 'Épisode', V2.D3, 'P1'], ['C8', 'Rattrape-moi en stories', R2S, 'P1'], ['C9', 'Prêt à reprendre', R2, 'P1']]],
@@ -1665,9 +1685,9 @@ const NAMES = Object.fromEntries(MODULES.flatMap(([, , , sc]) => sc.map(([c, l])
 /* Ses parcours (section 9 de son document), avec les codes de la planche */
 const JOURNEYS = [
   ['Je viens d\'installer l\'application', ['A2', 'A3', 'A4', 'B1'], 'Choix de 5 séries aimées → plateformes → recommandations → accueil'],
-  ['Je viens de finir un épisode', ['C1', 'C4', 'B4'], 'Mes séries → série → épisode suivant à cocher · raccourci : 1 touche depuis l\'accueil (B1)'],
+  ['Je viens de finir un épisode', ['C1', 'C4', 'B5'], 'Mes séries → série → épisode suivant à cocher · raccourci : 1 touche depuis l\'accueil (B1)'],
   ['Je ne sais pas quoi regarder', ['D4', 'D5'], 'Découvrir et questionnaire → recommandation → ajouter à voir'],
-  ['Une nouvelle saison est annoncée', ['B5', 'B6', 'C4', 'C3'], 'Notification → actualité → fiche série → calendrier'],
+  ['Une nouvelle saison est annoncée', ['B6', 'B7', 'C4', 'C3'], 'Notification → actualité → fiche série → calendrier'],
   ['Je veux regarder avec quelqu\'un', ['E1', 'E7'], 'Jouer → Series Match → comparer → choisir'],
   ['Je veux partager mes goûts', ['F1', 'F2'], 'Profil → Mon ADN séries → exporter une carte'],
   ['Je veux retrouver une ancienne série', ['D7', 'C5', 'C8', 'C9'], 'Recherche → fiche → résumé des saisons vues'],
