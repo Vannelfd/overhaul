@@ -555,7 +555,7 @@ const A5 = `${dimHome}<div class="veil"></div>
   <div class="col g8 small">
     ${['Tes séries et ta progression sauvegardées', 'Ton calendrier et tes alertes de sortie', 'Tes amis et tes recommandations'].map((t) => `<span class="row g8">${'<span style="color:var(--teal)">' + ic('check', 's') + '</span>'}${t}</span>`).join('')}
   </div>
-  <span class="btn w full"> Continuer avec Apple</span>
+  <span class="btn o full">Continuer avec Apple</span>
   <span class="btn o full">Continuer avec Google</span>
   <span class="btn o full">${ic('mail', 's')} Continuer avec un email</span>
   <span class="small muted" style="text-align:center">Plus tard</span>
@@ -574,7 +574,7 @@ const A6 = `<div class="scr" style="background:radial-gradient(100% 40% at 0% 0%
     <span class="small c-teal" style="align-self:flex-end">Mot de passe oublié ?</span>
     <span class="btn p full mt6">Me connecter</span>
     <div class="row g10 xs dim mt6"><span style="flex:1;height:1px;background:var(--line)"></span>OU<span style="flex:1;height:1px;background:var(--line)"></span></div>
-    <span class="btn w full"> Continuer avec Apple</span>
+    <span class="btn o full">Continuer avec Apple</span>
     <span class="btn o full">Continuer avec Google</span>
     <p class="small muted mt10" style="text-align:center">Pas encore de compte ? <span class="c-teal b">Créer un compte</span></p>
   </div>

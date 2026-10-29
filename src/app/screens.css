@@ -225,8 +225,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .poster .chk { background: var(--teal); }
 .chip.on, .seg span.on { background: rgba(255,255,255,.14); color: var(--fg); }
 .pill.mag { background: rgba(255,255,255,.14); color: var(--fg); }
-.tabbar span.on svg { color: var(--fg); }
-.tabbar span.on::before { background: var(--fg); }
+.tabbar span.on, .tabbar span.on svg { color: var(--magenta); }
+.tabbar span.on::before { background: var(--magenta); }
 .dot { background: var(--teal); }
 .steps i.on { background: var(--teal); }
 
