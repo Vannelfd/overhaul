@@ -186,10 +186,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   --display: "Manrope", "Segoe UI", system-ui, sans-serif;
   --body: "Manrope", "Segoe UI", system-ui, sans-serif;
 }
-/* Titres moins collés au haut de la page */
-.scr { padding-top: 44px; }
-/* Barre du haut posée sur une image : même marge que les autres écrans */
-.topbar[style*="position:absolute"] { top: 26px !important; }
+/* Plus d'air entre la barre du haut et le titre de la page */
+.topbar + .pad:has(> .h-xl:first-child, > .h-l:first-child, > .h-m:first-child) { margin-top: 28px; }
 .c-teal, .sec a { color: #5aa9c3; }
 .btn.p, .btn.w { background: var(--wine); color: #fff; }
 .phone { background: var(--ink); }
