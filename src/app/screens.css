@@ -178,7 +178,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   --gold: #1e6c86;
   --green: #1e6c86;
   --grad: linear-gradient(90deg, #841d4f, #1e6c86);
-  --wine: linear-gradient(90deg, #841d4f, #3c0a22);
+  --wine: linear-gradient(90deg, #841d4f, #1e6c86);
   --ink: #011921;
   --s1: #072631;
   --s2: #0c3140;
