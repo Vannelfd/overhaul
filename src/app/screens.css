@@ -235,6 +235,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 /* Icône dans une ligne de texte : alignée sur le texte */
 .i { vertical-align: -2px; }
 .pill { white-space: nowrap; }
+/* Tous les boutons principaux : effet verre transparent et contour dégradé (demande de la cliente) */
+.btn.p, .btn.w { position: relative; color: #fff; border: 0; background: rgba(255,255,255,.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.btn.p::before, .btn.w::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(90deg, #841d4f, #1e6c86); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.btn.p svg, .btn.w svg { color: #2b8fb0; }
+.btn[style*="var(--wine)"] { position: relative; color: #fff !important; background: rgba(255,255,255,.04) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.btn[style*="var(--wine)"]::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(90deg, #841d4f, #1e6c86); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.btn[style*="var(--wine)"] svg { color: #2b8fb0; }
 .btn.glass svg { color: #2b8fb0; }
 .selchk { position: absolute; top: 10px; right: 10px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--teal); color: #fff; }
 .poster .chk { background: var(--teal); }

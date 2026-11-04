@@ -42,12 +42,7 @@ function App() {
         <main className="board flex w-max flex-col gap-28 px-20 py-16">
           {!only && (
             <section className="flex w-[1704px] flex-col gap-6">
-              <div className="flex flex-col gap-1.5">
-                <h1 className="text-[28px] font-extrabold tracking-tight text-neutral-950">Parcours utilisateur</h1>
-                <p className="text-[16px] text-neutral-500">
-                  Les situations prévues par la cliente, dans son ordre. Touche un code pour voir l'écran.
-                </p>
-              </div>
+              <h1 className="text-[28px] font-extrabold tracking-tight text-neutral-950">Parcours utilisateur</h1>
               <div className="flex flex-col gap-2.5">
                 {JOURNEYS.map(([title, codes, steps]) => (
                   <div key={title} className="jr">

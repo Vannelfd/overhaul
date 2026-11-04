@@ -108,11 +108,11 @@ const O1 = `<div class="scr" style="padding:0;background:radial-gradient(120% 60
 
 /* A2 : choisir 5 séries, rangées par catégorie */
 const O2CATS = [
-  ['🔥 Les plus populaires', ['Stranger Things', 'Breaking Bad', 'Game of Thrones', 'Friends', 'The Office']],
-  ['🧩 Thriller et mystère', ['Dark', 'Severance', 'Mindhunter', 'True Detective', 'Twin Peaks']],
-  ['🚀 Science-fiction', ['Silo', 'Devs', 'Westworld', 'Black Mirror', 'Arcane']],
-  ['😂 Comédie', ['Fleabag', 'Abbott Elementary', 'The Bear', 'BoJack Horseman', 'Wednesday']],
-  ['🎭 Drame', ['Succession', 'The Wire', 'Six Feet Under', 'Mad Men', 'Pachinko']],
+  ['Les plus populaires', ['Stranger Things', 'Breaking Bad', 'Game of Thrones', 'Friends', 'The Office']],
+  ['Thriller et mystère', ['Dark', 'Severance', 'Mindhunter', 'True Detective', 'Twin Peaks']],
+  ['Science-fiction', ['Silo', 'Devs', 'Westworld', 'Black Mirror', 'Arcane']],
+  ['Comédie', ['Fleabag', 'Abbott Elementary', 'The Bear', 'BoJack Horseman', 'Wednesday']],
+  ['Drame', ['Succession', 'The Wire', 'Six Feet Under', 'Mad Men', 'Pachinko']],
 ];
 const O2SEL = ['Dark', 'Severance', 'Succession'];
 const O2 = `<div class="scr" style="padding-bottom:0">
@@ -1606,7 +1606,7 @@ const B2d = `<div class="scr">
   ${homeTop}${greet}${homeTabs('Quoi regarder')}
   <div class="pad col" style="margin-top:24px;gap:14px">
     <span class="h-m">Tu as envie de quoi ce soir ?</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">${[['🧩', 'Un mystère', true], ['😂', 'Rire'], ['💔', 'Être ému'], ['⚡', 'Du suspense']].map(([e, t, on]) => `<div class="col g8" style="position:relative;padding:18px 14px;border-radius:20px;background:var(--s1)"><span style="font-size:24px">${e}</span><span class="small" style="font-weight:600">${t}</span>${on ? `<span class="selchk">${ic('check', 'xs')}</span>` : ''}</div>`).join('')}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">${[['🧩', 'Un mystère', true], ['😂', 'Rire'], ['💔', 'Être ému'], ['⚡', 'Du suspense']].map(([e, t, on]) => `<div class="col g8" style="position:relative;padding:18px 14px;border-radius:20px;background:var(--s1);align-items:center;justify-content:center;text-align:center"><span style="font-size:24px">${e}</span><span class="small" style="font-weight:600">${t}</span>${on ? `<span class="selchk">${ic('check', 'xs')}</span>` : ''}</div>`).join('')}</div>
     <div class="seg"><span>30 min</span><span class="on">45 min</span><span>1 h et +</span></div>
   </div>
   ${sec('Notre idée pour ce soir')}
