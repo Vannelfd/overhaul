@@ -221,6 +221,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .poster .pt { font-weight: 800; text-transform: none; }
 .small { line-height: 1.5; }
 /* Sélection : une simple coche ; le Wine reste réservé aux boutons */
+.btn.glass { position: relative; color: #fff; border: 0; background: rgba(255,255,255,.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.btn.glass::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(90deg, #841d4f, #1e6c86); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.av { position: relative; color: #fff; background: rgba(255,255,255,.05) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.av::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(90deg, #841d4f, #1e6c86); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.glass-ic { position: relative; color: #fff; background: rgba(255,255,255,.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.glass-ic::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(90deg, #841d4f, #1e6c86); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+/* Planche : chaque écran affiché sur toute sa longueur (comme dans React), sauf les écrans en surimpression */
+.phone:not(:has(.veil)):not(:has([style*="height:100%"])) { height: auto; min-height: 844px; }
+.phone:not(:has(.veil)):not(:has([style*="height:100%"])) > .scr { overflow: visible; flex: 1 0 auto; }
+/* En-têtes à deux lignes (ex. « Severance » puis « Saison 2 ») : un peu d'air entre les deux */
+.topbar .col > .over + span { margin-top: 5px; }
+/* Icône dans une ligne de texte : alignée sur le texte */
+.i { vertical-align: -2px; }
+.pill { white-space: nowrap; }
+.btn.glass svg { color: #2b8fb0; }
 .selchk { position: absolute; top: 10px; right: 10px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--teal); color: #fff; }
 .poster .chk { background: var(--teal); }
 .chip.on, .seg span.on { background: rgba(255,255,255,.14); color: var(--fg); }
