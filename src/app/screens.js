@@ -73,7 +73,7 @@ const tabbar = (on) => `<nav class="tabbar">${TABS.map(([i, l]) => `<span class=
 const sec = (t, a) => `<div class="sec"><h3>${t}</h3>${a ? `<a>${a} ›</a>` : ''}</div>`;
 const chip = (t, on, x = '') => `<span class="chip ${on ? 'on' : ''} ${x}">${t}</span>`;
 const back = (title, over, right = '') => `<div class="topbar"><span class="ib">${ic('left')}</span><div class="col" style="flex:1;margin-left:12px;min-width:0">${over ? `<span class="over">${over}</span>` : ''}<span class="h-s up" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${title}</span></div>${right}</div>`;
-const ring = (p, label, c = 'var(--teal)', size = 44, extra = '') => `<span class="ring ${extra}" style="--p:${p};--c:${c};width:${size}px;height:${size}px"><span>${label}</span></span>`;
+const ring = (p, label, c = 'var(--teal)', size = 44, extra = '') => `<span class="ring ${extra}" style="position:relative;background:none;width:${size}px;height:${size}px"><svg viewBox="0 0 44 44" width="${size}" height="${size}" style="position:absolute;inset:0;transform:rotate(-90deg)" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="4"/><circle cx="22" cy="22" r="20" fill="none" style="stroke:${c}" stroke-width="4" stroke-linecap="round" stroke-dasharray="${(p / 100 * 125.66).toFixed(1)} 125.66"/></svg><span style="position:relative">${label}</span></span>`;
 const stars = (n, size = 14) => `<span class="stars" style="font-size:${size}px">${'★'.repeat(n)}<span class="off">${'★'.repeat(5 - n)}</span></span>`;
 const prog = (p, x = '') => `<div class="prog ${x}"><i style="width:${p}%"></i></div>`;
 
