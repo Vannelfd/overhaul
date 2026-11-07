@@ -1944,6 +1944,9 @@ for (const m of MODULES) for (const x of m[3]) {
   if (x[0] === 'A4') x[2] = x[2].split('Ajouter à ma wishlist').join('Mettre dans ma wishlist');
   if (x[0] === 'A4') { const _h = '</svg> Mettre dans ma wishlist</span>'; let _k; while ((_k = x[2].indexOf(PATHS.heart + _h)) > -1) { const _st = x[2].lastIndexOf('<svg', _k); x[2] = x[2].slice(0, _st) + 'Mettre dans ma wishlist</span>' + x[2].slice(_k + (PATHS.heart + _h).length); } }
 }
+
+for (const m of MODULES) for (const x of m[3]) x[2] = x[2].replace(/color:var\(--gold\)(;[^"]*)?">(★+)/g, 'color:#f5c518$1">$2');
+for (const m of MODULES) for (const x of m[3]) x[2] = x[2].replace(/(height:inherit;width:[\d.]+%;)background:var\(--teal\)/g, '$1background:var(--grad)');
 const JOURNEYS = [
   ['Je viens d\'installer l\'application', ['A2', 'A3', 'A4', 'B1'], 'Choix de 5 séries aimées → plateformes → recommandations → accueil'],
   ['Je viens de finir un épisode', ['C1', 'C4', 'B5'], 'Mes séries → série → épisode suivant à cocher · raccourci : 1 touche depuis l\'accueil (B1)'],
